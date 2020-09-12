@@ -1,0 +1,26 @@
+@font-face {
+    font-family: cursiveFont;
+    src: url('cursivefont.ttf');
+  }
+  
+
+.home_main{
+    width: 100%;    
+    
+  font-family: 'Arial Narrow Bold', sans-serif;
+    background-image: url('background.jpg');
+    min-height: 600px;
+    margin-top: -9px;
+    text-align: center;
+}
+
+.home_button{
+    background-color: white;
+    color: black;    
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    padding: 10px 15px 10px 15px;
+    border: 0;
+    border-radius: 10px;
+    text-decoration: none
+}

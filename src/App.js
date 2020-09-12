@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
+import AppContext from './AppContext'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [name, setUsername] = useState(null)
+  const [house, setHousename] = useState(null)
+
+  const userVars = {
+    username: name,
+    housename: house,
+    setUsername,
+    setHousename
+  }
+
   return (
+    <AppContext.Provider value={userSettings}>  
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +33,7 @@ function App() {
         </a>
       </header>
     </div>
+    </AppContext.Provider>
   );
 }
 

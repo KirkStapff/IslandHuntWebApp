@@ -1,0 +1,164 @@
+.container{
+    font-family: 'Arial Narrow Bold', sans-serif;
+    color: palevioletred;
+    background-color: white;
+    padding-bottom: 64px;
+    height:100%;
+    width:100%;
+    padding-left: 16px;
+    margin-top:-9px;
+}
+
+.row{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+    margin-top: 16px;
+    margin-bottom:16px;
+}
+
+.main{    
+    height:100%;
+    width:100%;
+}
+
+.popup{
+    display: block;
+    padding: 8px 16px 0px 16px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    color: white;
+    font-size: 24px;
+    position: fixed;
+    height: 250px;
+    width: 600px;
+    border-radius: 30px;
+    top: 120px;
+    background-color: palevioletred;
+    border: 2px solid black;
+    margin-bottom: 32px;
+    margin-top: -26px;
+    align-content: center;
+}
+
+.popupText{
+    margin-top:4px;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+.enterName{
+    position: absolute;
+    margin-left:160px;
+}
+
+.enterHouse{
+    position: absolute;
+    margin-top: 42px;
+    margin-left: 155px;
+    align-self: center;
+    width: 100%;
+}
+.submitButton{
+    position: absolute;
+    margin-top: 32px;
+    margin-left: 105px;
+    align-self: center;
+}
+.submitButton button{
+    font-size:22px;
+    padding:5px 12px 5px 12px;
+    background-color: rgb(175, 62, 100);
+    color: white;
+}
+.title{
+    align-self: center;
+    color: palevioletred;
+}
+
+.inline1{
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.inline2{
+    display: inline-block;
+    vertical-align: text-top;
+    margin-left: 16px;
+    font-size: 16px;
+    vertical-align: text-top;
+    word-wrap: normal;
+    width: 300px;
+}
+
+.item{
+    margin: 16px 0px 0px 32px;
+    display:flex;
+    flex-direction:column;
+}
+
+.bidding{
+    margin-left: 4px;
+    display:flex;
+    color: palevioletred;
+}
+
+.biddingText{
+    font-size: 25px;
+    align-self: center;
+    margin-right: 16px;
+    color: palevioletred;
+}
+
+.biddingValues{
+    color:palevioletred;
+    font-size: 32px;
+    align-self: center;
+    margin-left: 28px;
+}
+
+.biddingInput{
+    color: palevioletred;
+    font-family: inherit; 
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    background: transparent;
+    padding: 7px 0;
+    height: 24px;
+    width: 96px;
+    vertical-align: top;
+    font-size: 28px;
+    margin-left: 8px;
+    margin-right: 16px;
+}
+
+.biddingDollar{    
+    font-size: 30px;
+    margin: 2px;
+    vertical-align: middle;
+}
+
+.biddingButton{
+    margin-top: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 25px;
+    background: palevioletred;
+    border: transparent;
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.biddingButton:hover{
+    background-color: plum;
+}
+
+.biddingButton:active,
+a:focus { 
+    outline: none;
+}
