@@ -41,7 +41,6 @@ class Home extends React.Component {
         resetInputs: ''
       })
     }
-    console.log("breasts: "+ this.bidValue0.value)
   }
 
   handleBid1 = event => {

@@ -1,21 +1,48 @@
 import React, { Component } from 'react'
+import { useParams } from 'react-router-dom'
 class Home extends Component {
-  componentWillLeave () {
-    console.log('Component will leave')
+
+  constructor(props){
+    super(props);
+    this.state = {
+      items: 'ching',
+      isLoaded: false,
+    }
+  }
+
+  getData () {
+    fetch('/test', {
+    }).then(res => res.json()).then(json =>{
+      this.setState({
+        items: json[0].Name,
+        isLoaded: true
+      })    
+    
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  componentDidMount () {
+    this.getData()  
   }
   render () {
-    return (
+    
+    this.getData();
+    var {items, isLoaded} = this.state;
+
+    if(isLoaded){
+      return (
+        <div>
+          {items}
+        </div>
+      )}else{
+    return(
       <div>
-        <h2>HELLO</h2>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+        No       
       </div>
-    )
+      )
+    }
   }
 }
 
