@@ -14,7 +14,7 @@ class Home extends Component {
     fetch('/test', {
     }).then(res => res.json()).then(json =>{
       this.setState({
-        items: json[0].Name,
+        items: json[0].Item + ": "+ json[0]['MAX(Bid)'],
         isLoaded: true
       })    
     

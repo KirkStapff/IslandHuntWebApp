@@ -50,6 +50,7 @@
 .enterName{
     position: absolute;
     margin-left:160px;
+    color: white;
 }
 
 .enterHouse{
@@ -58,6 +59,7 @@
     margin-left: 155px;
     align-self: center;
     width: 100%;
+    color: white;
 }
 .submitButton{
     position: absolute;
@@ -71,6 +73,25 @@
     background-color: rgb(175, 62, 100);
     color: white;
 }
+
+.submitInput{
+    color: white;
+    font-family: inherit; 
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 1.3rem;
+    background: transparent;
+    padding: 7px 0;
+    height: 24px;
+    width: 96px;
+    vertical-align: top;
+    font-size: 28px;
+    margin-left: 8px;
+    margin-right: 16px;
+}
+
 .title{
     align-self: center;
     color: palevioletred;

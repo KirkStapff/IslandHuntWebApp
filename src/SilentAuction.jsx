@@ -2,16 +2,38 @@ import React from 'react'
 
 import "../src/auction.css"
 
+function testBid(item, curbid, newbid, house, name){
+  console.log("ring ting bong")
+  if(newbid > curbid){
+    const headers = new Headers();
+      headers.append("Content-Type", "application/json")
+
+    const data = {
+      item: item,
+      bid: newbid,
+      house: house,
+      name: name,
+    }
+
+    const options = {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(data)
+    }
+
+    const request = new Request('/bid', options);
+    
+    fetch(request).catch(err => {
+      console.log(err)
+    })
+  }
+}
+
 class Home extends React.Component {
 
   constructor(props) {
     super(props)
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
-  }
-  
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
   }
   
   componentWillUnmount() {
@@ -32,67 +54,55 @@ class Home extends React.Component {
     house: null,
   }
 
-  handleBid0 = event => {
-    if(this.bidValue0.value > this.state.highestBids[0]){
-      let newHigh = this.state.highestBids;
-      newHigh[0] = this.bidValue0.value
-      this.setState({
-        highestBids: newHigh,
-        resetInputs: ''
-      })
-    }
-  }
-
-  handleBid1 = event => {
-    if(this.bidValue1.value > this.state.highestBids[1]){
-      let newHigh = this.state.highestBids;
-      newHigh[1] = this.bidValue1.value
-      this.setState({
-        highestBids: newHigh,
-        resetInputs: ''
-      })
-    }
-  }
-
-  handleBid2 = event => {
-    if(this.bidValue2.value > this.state.highestBids[2]){
-      let newHigh = this.state.highestBids;
-      newHigh[2] = this.bidValue2.value
-      this.setState({
-        highestBids: newHigh,
-      })
-    }
-  }
-
-  handleBid3 = event => {
-    if(this.bidValue3.value > this.state.highestBids[3]){
-      let newHigh = this.state.highestBids;
-      newHigh[3] = this.bidValue3.value
-      this.setState({
-        highestBids: newHigh,
-      })
-    }
-  }
-
   submit = event => {
     this.setState({
-      name: this.name,
-      house: this.house
+      name: this.name.value,
+      house: this.house.value
     })
     this.forceUpdate()
   }
 
+  getData () {
+    fetch('/test').then(res => res.json()).then(json =>{
+      this.setState({
+        item1: json[0]['Bid'],
+        item2: json[1]['Bid'],
+        item3: json[2]['Bid'],
+        item4: json[3]['Bid'],
+        item5: json[4]['Bid'],
+        name1: json[0]['Name'],
+        name2: json[1]['Name'],
+        name3: json[2]['Name'],
+        name4: json[3]['Name'],
+        name5: json[4]['Name'],
+        isLoaded: true
+      })    
+    
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  componentDidMount () {
+    this.getData()  
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  
   render () {
+    
+    this.getData();
+    var {items, isLoaded} = this.state;
     if(this.state.name==null){
       return (
         <div className="main">
           <div className="popup">
             <p className="popupText" style={{marginLeft:'12px'}}>Login</p>
             <div className="enterName">
-              Name: <input id="input_name" className='biddingInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
+              Name: <input id="input_name" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
             </div>
             <div className="enterHouse">
-              House: <input id="input_house" className='biddingInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
+              House: <input id="input_house" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
               <div className="submitButton">
               <button className = "biddingButton" onClick={this.submit}>Submit</button>
               </div>
@@ -115,11 +125,11 @@ class Home extends React.Component {
           metus nec massa. Maecenas hendrerit laoreet augue</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.highestBids[0]}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
             </span>
             <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue0 = c} type="number" />
-            <button className="biddingButton" onClick={this.handleBid0}> Place Bid </button>
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Item 1", this.state.item1, this.bidValue1.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
           </div>
           <div className="item">
@@ -132,11 +142,11 @@ class Home extends React.Component {
           metus nec massa. Maecenas hendrerit laoreet augue</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.highestBids[1]}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}, {this.state.name2}</h1>
             </span>
             <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
-            <button className="biddingButton" onClick={this.handleBid1}> Place Bid </button>
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Item 2", this.state.item2, this.bidValue2.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
           </div>
         </div>
@@ -152,11 +162,11 @@ class Home extends React.Component {
         metus nec massa. Maecenas hendrerit laoreet augue</p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.highestBids[2]}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
           </span>
           <span className="bidding">            
-          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
-          <button className="biddingButton" onClick={this.handleBid2}> Place Bid </button>
+          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
+          <button className="biddingButton" onClick={()=>testBid("Item 3", this.state.item3, this.bidValue3.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
         <div className="item">
@@ -169,11 +179,11 @@ class Home extends React.Component {
         metus nec massa. Maecenas hendrerit laoreet augue</p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.highestBids[3]}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>
           </span>
           <span className="bidding">            
-          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
-          <button className="biddingButton" onClick={this.handleBid3}> Place Bid </button>
+          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
+          <button className="biddingButton" onClick={()=>testBid("Item 4", this.state.item4, this.bidValue4.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
       </div>
