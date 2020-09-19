@@ -52,7 +52,7 @@ app.get('/test', (req, res)=>{
 
 app.all('/bid', (req, res) => {
   query = 'INSERT INTO `BosomBuddiesAuctions`.`Bids` (`Item`, `Name`, `House`, `Bid`) VALUES ("'+req.body.item+'", "'+req.body.name+'", "'+req.body.house+'", "'+req.body.bid+'")';
-
+  console.log(query)
   queryDB(query, (err, rows) => {
     if(err){
        console.log("ring ting tong");
