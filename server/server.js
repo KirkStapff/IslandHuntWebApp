@@ -47,7 +47,6 @@ app.get('/test', (req, res)=>{
     if(err) throw err;
 
     res.send(rows)
-    console.log(rows)
   });
 })
 
