@@ -29,6 +29,18 @@ function testBid(item, curbid, newbid, house, name){
   }
 }
 
+function getCountdown(){
+  let finish = new Date("Oct 19, 2020, 00:00:00").getTime();
+  let now = new Date().getTime();
+
+  let diff = finish - now;
+  let days = Math.floor(diff / (1000*60*60*24))
+  let hours = Math.floor((diff % (1000*60*60*24))/(1000*60*60))
+  let minutes = Math.floor((diff % (1000*60*60))/(1000*60))
+  let seconds = Math.floor((diff % (1000*60))/(1000))
+  return [days, hours, minutes, seconds, diff]
+}
+
 class Home extends React.Component {
 
   constructor(props) {
@@ -87,6 +99,20 @@ class Home extends React.Component {
     this.getData()  
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    var x = setInterval(function(){
+      var t = getCountdown();
+      if(t[4] > 0){
+        document.getElementById("days").innerHTML = t[0]
+        document.getElementById("hours").innerHTML = t[1]
+        document.getElementById("minutes").innerHTML = t[2]
+        document.getElementById("seconds").innerHTML = t[3]
+      }else{
+        document.getElementById("days").innerHTML = "0"
+        document.getElementById("hours").innerHTML = "0"
+        document.getElementById("minutes").innerHTML = "0"
+        document.getElementById("seconds").innerHTML = "0"
+      }
+    }, 1000);
   }
   
   render () {
@@ -113,16 +139,19 @@ class Home extends React.Component {
   }else{
     return (
       <div className="container">
+        <div className="timer">
+          <div>Auction closes in</div>
+          <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Min <span id="seconds"></span> Sec
+        </div>
         <h1 className="title">Silent Auction</h1>
         <div className='row'>      
         <div className="item">
-            <h2>Title for Item</h2>
+            <h2>One Week Stay at New Hampshire Vacation Home</h2>
             <span>
-              <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Cras facilisis urna ornare ex volutpat, et
-          convallis erat elementum. Ut aliquam, ipsum vitae
-          gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-          metus nec massa. Maecenas hendrerit laoreet augue</p>
+              <img className="inline1" width="220px" height="200px" src={require("../src/newhampshirehouse.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Located in Jackson, in the Mt Washington Valley in Northern New Hampshire, about 3 hour’s drive north of Boston.
+Offering four good sized bedrooms, gym and games room/bar. There are five ski hills within 30 minutes of the house, if someone wants to use it for
+skiing. It is also a lovely house in the summer and the Fall. There will be some black-out periods, but sufficient flexibility.</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
@@ -133,9 +162,9 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Title for Item</h2>
+            <h2>KitchenAid Artisan Series Stand-Mixer</h2>
             <span>
-              <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
+              <img className="inline1" width="220px" height="200px" src={require("../src/kitchenaidmixer.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Cras facilisis urna ornare ex volutpat, et
           convallis erat elementum. Ut aliquam, ipsum vitae
           gravida suscipit, metus dui bibendum est, eget rhoncus nibh
@@ -152,31 +181,11 @@ class Home extends React.Component {
         </div>
         <hr style={{height:'2px', color:'black',backgroundColor:'black'}}></hr>
         <div className="row">
-        <div className="item">
-          <h2>Title for Item</h2>
+          <div className="item">
+          <h2>Rake in the $$$$$</h2>
           <span>
-            <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue</p>
-          </span>
-          <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
-          </span>
-          <span className="bidding">            
-          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
-          <button className="biddingButton" onClick={()=>testBid("Item 3", this.state.item3, this.bidValue3.value, this.state.house, this.state.name)}> Place Bid </button>
-          </span>
-        </div>
-        <div className="item">
-          <h2>Title for Item</h2>
-          <span>
-            <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue</p>
+            <img className="inline1" width="220px" src={require("../src/rakingcash.png")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">Rake in the $$$$$$ with $100 worth of different scratch cards.</p>
           </span>
           <span className="bidding">
             <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>
