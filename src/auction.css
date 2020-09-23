@@ -194,3 +194,9 @@
 a:focus { 
     outline: none;
 }
+
+.auction-over{
+    background: palevioletred;
+    color: white;
+    font-size: 32px;
+}
