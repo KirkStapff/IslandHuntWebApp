@@ -45,8 +45,25 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/test', (req, res)=>{
   queryDB('SELECT ungrouped.* FROM Bids ungrouped INNER JOIN (SELECT Item, MAX(Bid) AS MaxBid FROM Bids GROUP BY Item) grouped ON ungrouped.Item = grouped.Item AND ungrouped.Bid = grouped.MaxBid ORDER BY Item ASC', (err, rows) => {
     if(err) throw err;
-
-    res.send(rows)
+  if(rows.length > 12){
+    for(i = 0; i < rows.length; i++){
+      for(j = 0; j < rows.length; j++){
+        if(rows[i]['Item']===rows[j]['Item']){
+          let query = 'DELETE FROM Bids WHERE ID='+rows[j]['ID'];
+          console.log(query)
+          queryDB(query, (err, rows) => {
+            if(err){
+               console.log("ring ting tong");
+            }    
+          })
+          return
+          console.log(query)
+        }
+      }
+    }
+  }
+  console.log(rows.length)
+  res.send(rows)
   });
 })
 
