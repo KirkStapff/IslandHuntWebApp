@@ -135,6 +135,83 @@ class Home extends React.Component {
         </div>
       );
   }else if (getCountdown()[4] > 0){
+    if(this.state.width < 800){
+      return (
+        <div className="container">
+          <div className="timer">
+              <div>Auction closes in</div>
+              <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Min <span id="seconds"></span> Sec
+            </div>
+          <h1 className="title">Men Auction</h1>    
+          <div className="item">
+              <h2>Keerome Maybury</h2>
+              <span>
+                <img className="inline1" width="220px" src={require("../src/keerome.jpg")} alt="Bosom Buddies Logo"></img>
+                <p className="inline2">Relax and enjoy style and comfort on board
+                this classic 55ft cruiser. Keerome will welcome you on board Traveler 
+                for a Cocktail Cruise for 8 People including processco and hors d’oeuvres</p>
+              </span>
+              <span className="bidding">
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
+              </span>
+              <span className="bidding">            
+              <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
+              <button className="biddingButton" onClick={()=>testBid("Man A", this.state.item1, this.bidValue1.value, this.state.house, this.state.name)}> Place Bid </button>
+              </span>
+            </div>
+            <div className="item">
+              <h2>Captain Cook</h2>
+              <span>
+                <img className="inline1" width="220px" src={require("../src/dai.jpg")} alt="Bosom Buddies Logo"></img>
+                <p className="inline2">Dai is offering to cook a 5 course seafood 
+                and lobster dinner for up to 10 people  at your home. You suppy the 
+                liquor we will suppy the food, Bartender and Waitress service and of
+                course Dai himself</p>
+              </span>
+              <span className="bidding">
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}, {this.state.name2}</h1>
+              </span>
+              <span className="bidding">            
+              <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
+              <button className="biddingButton" onClick={()=>testBid("Man B", this.state.item2, this.bidValue2.value, this.state.house, this.state.name)}> Place Bid </button>
+              </span>
+            </div>
+          <div className="item">
+            <h2>Paul Lambert</h2>
+            <span>
+              <img className="inline1" width="220px" src={require("../src/paul.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Paul lambert  - personal  trainer 
+              Paul will be teaching some easy to execute 
+              Defensive tactics to protect yourself and 
+              Escape to a safe place! 3 sessions for  8-10 people</p>
+            </span>
+            <span className="bidding">
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
+            </span>
+            <span className="bidding">            
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Man C", this.state.item3, this.bidValue3.value, this.state.house, this.state.name)}> Place Bid </button>
+            </span>
+          </div>
+          <div className="item">
+            <h2>Stratton Hatfield</h2>
+            <span>
+              <img className="inline1" width="220px" src={require("../src/stratton.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Cheers! The Swizzle Washing Machine will come to your party! 
+              2 Hours of the best Gosling's Rum Swizzle you've ever tasted served up by Mr. Hatfield and his Team.
+              Always a huge hit at every party.</p>
+            </span>
+            <span className="bidding">
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>
+            </span>
+            <span className="bidding">            
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Man D", this.state.item4, this.bidValue4.value, this.state.house, this.state.name)}> Place Bid </button>
+            </span>
+          </div>
+        </div>
+      );
+    }else{
     return (
       <div className="container">
         <div className="timer">
@@ -214,7 +291,7 @@ class Home extends React.Component {
         </div>
       </div>
       </div>
-    );
+    );}
     }else{
       return(
         <div className="auction-over">
