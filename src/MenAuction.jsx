@@ -65,16 +65,14 @@ class Home extends React.Component {
   getData () {
     fetch('/test').then(res => res.json()).then(json =>{
       this.setState({
-        item1: json[0]['Bid'],
-        item2: json[1]['Bid'],
-        item3: json[2]['Bid'],
-        item4: json[3]['Bid'],
-        item5: json[4]['Bid'],
-        name1: json[0]['Name'],
-        name2: json[1]['Name'],
-        name3: json[2]['Name'],
-        name4: json[3]['Name'],
-        name5: json[4]['Name'],
+        item1: json[15]['Bid'],
+        item2: json[16]['Bid'],
+        item3: json[17]['Bid'],
+        item4: json[18]['Bid'],
+        name1: json[15]['Name'],
+        name2: json[16]['Name'],
+        name3: json[17]['Name'],
+        name4: json[18]['Name'],
         isLoaded: true
       })    
     
@@ -128,7 +126,7 @@ class Home extends React.Component {
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item 1", this.state.item1, this.bidValue1.value, this.state.house, this.state.name)}> Place Bid </button>
+            <button className="biddingButton" onClick={()=>testBid("Man A", this.state.item1, this.bidValue1.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
           </div>
           <div className="item">
@@ -145,7 +143,7 @@ class Home extends React.Component {
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item 2", this.state.item2, this.bidValue2.value, this.state.house, this.state.name)}> Place Bid </button>
+            <button className="biddingButton" onClick={()=>testBid("Man B", this.state.item2, this.bidValue2.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
           </div>
         </div>
@@ -165,7 +163,7 @@ class Home extends React.Component {
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
-          <button className="biddingButton" onClick={()=>testBid("Item 3", this.state.item3, this.bidValue3.value, this.state.house, this.state.name)}> Place Bid </button>
+          <button className="biddingButton" onClick={()=>testBid("Man C", this.state.item3, this.bidValue3.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
         <div className="item">
@@ -181,7 +179,7 @@ class Home extends React.Component {
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
-          <button className="biddingButton" onClick={()=>testBid("Item 4", this.state.item4, this.bidValue4.value, this.state.house, this.state.name)}> Place Bid </button>
+          <button className="biddingButton" onClick={()=>testBid("Man D", this.state.item4, this.bidValue4.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
       </div>
