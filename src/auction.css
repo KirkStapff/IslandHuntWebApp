@@ -75,14 +75,13 @@
 }
 
 .timer{
-    position: absolute;
-    right: 70px;
-    top: 130px;
     background: palevioletred;
     color: white;
     border-radius: 5px;
     padding: 7px;
     font-size: 18px;
+    text-align: center;
+    margin-top: 8px;
 }
 
 .submitInput{
