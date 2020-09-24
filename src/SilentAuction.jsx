@@ -130,7 +130,7 @@ class Home extends React.Component {
   }
   
   render () {
-    
+    let canClick = true;
     this.getData();
     var {items, isLoaded} = this.state;
     if(this.state.name==null){
