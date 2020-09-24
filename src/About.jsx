@@ -7,13 +7,8 @@ class Home extends Component {
       <div class="info_main">
         <h2 class ="info_title">Night In {'&'} Charity Auctions</h2> 
         <div class="text">
-          <center>Cras facilisis urna ornare ex volutpat, et
-          convallis erat elementum. Ut aliquam, ipsum vitae
-          gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-          metus nec massa. Maecenas hendrerit laoreet augue
-          nec molestie. Cum sociis natoque penatibus et magnis
-          dis parturient montes, nascetur ridiculus mus.</center>
-          <center>Duis a turpis sed lacus dapibus elementum sed eu lectus.</center>
+          <center>Bosom Buddies is a group of girls who got together in 2005 for a "Girl's Night In" to raise money for Bermuda Cancer and Health, for Breast Cancer. We continue to host events for cancer charities in Bermuda.</center>
+          <center>It started with 12 women 9 years ago, and last year there were 160! in 2014 we also entered a team into the Relay for Life, which also raises money for Bermuda Cancer and Health.</center>
         </div>
       </div>
     )

@@ -47,7 +47,6 @@ class Nav extends Component {
             <a className="navitem" href="/">Home</a>
             <a href="about">About</a>
             <a href="contact">Contact</a>
-            <a href="sponsors">Sponsors</a>
             <a href="silent_auction">Silent Auction</a>
             <a href="men_auction">Men Auction</a>
           </div>

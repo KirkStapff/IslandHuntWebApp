@@ -350,6 +350,50 @@ class Home extends React.Component {
             <button className="biddingButton" onClick={()=>testBid("Item L", this.state.item12, this.bidValue12.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
           </div>
+          <div className="item">
+            <h2>Electric Bike Tour</h2>
+            <span>
+              <img className="inline1" width="220px" src={require("../src/podego.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Pedego electric bike rental for 2 people. 
+              Choose to tour harrington sound , coopers island or st. Georges.
+              See bermuda like you’ve never seen it before!</p>
+            </span>
+            <span className="bidding">
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item13}, {this.state.name13}</h1>
+            </span>
+            <span className="bidding">            
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue13 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Item M", this.state.item13, this.bidValue13.value, this.state.house, this.state.name)}> Place Bid </button>
+            </span>
+          </div>
+          <div className="item">
+            <h2>1609 Design</h2>
+            <span>
+              <img className="inline1" width="220px" src={require("../src/1609.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">$150 voucher from 1609 design plus Handbag and Accessories</p>
+            </span>
+            <span className="bidding">
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item14}, {this.state.name14}</h1>
+            </span>
+            <span className="bidding">            
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue14 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Item N", this.state.item14, this.bidValue14.value, this.state.house, this.state.name)}> Place Bid </button>
+            </span>
+          </div>
+          <div className="item">
+            <h2>Brunch For Two and New Handbag and Necklace</h2>
+            <span>
+              <img className="inline1" width="220px" src={require("../src/fourways.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Brunch for two at Fourways plus a new Handbag, Scarf and Necklace</p>
+            </span>
+            <span className="bidding">
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item15}, {this.state.name15}</h1>
+            </span>
+            <span className="bidding">            
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue15 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Item O", this.state.item15, this.bidValue15.value, this.state.house, this.state.name)}> Place Bid </button>
+            </span>
+          </div>
         </div>
       );
     }else{
@@ -592,7 +636,8 @@ class Home extends React.Component {
             </span>
           </div>
         </div>
-        <div className="item">
+        <div className="row">
+          <div className="item">
             <h2>Brunch For Two and New Handbag and Necklace</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/fourways.jpg")} alt="Bosom Buddies Logo"></img>
@@ -607,6 +652,7 @@ class Home extends React.Component {
             </span>
           </div>
         </div>
+      </div>
       );
     }
   }else{

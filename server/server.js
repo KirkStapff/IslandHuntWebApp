@@ -53,26 +53,26 @@ app.get('/test', (req, res)=>{
 
 app.all('/bid', (req, res) => {
   query = 'SELECT Max(Bid) FROM Bids WHERE Item="'+req.body.item+'"'
-  freshConn = mysql.createConnection(connectionDetails)
-  freshConn.query(query, (err, rows) => {
+  //freshConn = mysql.createConnection(connectionDetails)
+  queryDB(query, (err, rows) => {
     if(err){
        console.log("ring ting tong");
     }
     console.log(rows[0]['Max(Bid)']+" < "+req.body.bid)
     if(rows[0]['Max(Bid)'] < req.body.bid){
       query2 = 'INSERT INTO `BosomBuddiesAuctions`.`Bids` (`Item`, `Name`, `House`, `Bid`) VALUES ("'+req.body.item+'", "'+req.body.name+'", "'+req.body.house+'", "'+req.body.bid+'")';
-      freshConn2 = mysql.createConnection(connectionDetails)
-      freshConn2.query(query2, (err, rows) => {
+      //freshConn2 = mysql.createConnection(connectionDetails)
+      queryDB(query2, (err, rows) => {
       if(err){
           console.log("ring ting tong");
       }
       console.log(query2)
       res.send(rows)
       })
-      freshConn2.end()
+      //freshConn2.end()
     }    
   })
-  freshConn.end()
+  //freshConn.end()
   res.on('close', function(){})
   res.on('finish', function(){})
   res.on('drain', function(){})

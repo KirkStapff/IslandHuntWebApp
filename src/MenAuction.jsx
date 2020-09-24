@@ -29,6 +29,18 @@ function testBid(item, curbid, newbid, house, name){
   }
 }
 
+function getCountdown(){
+  let finish = new Date("Oct 19, 2020, 00:00:00").getTime();
+  let now = new Date().getTime();
+
+  let diff = finish - now;
+  let days = Math.floor(diff / (1000*60*60*24))
+  let hours = Math.floor((diff % (1000*60*60*24))/(1000*60*60))
+  let minutes = Math.floor((diff % (1000*60*60))/(1000*60))
+  let seconds = Math.floor((diff % (1000*60))/(1000))
+  return [days, hours, minutes, seconds, diff]
+}
+
 class Home extends React.Component {
 
   constructor(props) {
@@ -85,6 +97,20 @@ class Home extends React.Component {
     this.getData()  
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    var x = setInterval(function(){
+      var t = getCountdown();
+      if(t[4] > 0){
+        document.getElementById("days").innerHTML = t[0]
+        document.getElementById("hours").innerHTML = t[1]
+        document.getElementById("minutes").innerHTML = t[2]
+        document.getElementById("seconds").innerHTML = t[3]
+      }else{
+        document.getElementById("days").innerHTML = "0"
+        document.getElementById("hours").innerHTML = "0"
+        document.getElementById("minutes").innerHTML = "0"
+        document.getElementById("seconds").innerHTML = "0"
+      }
+    }, 1000);
   }
   
   render () {
@@ -108,9 +134,13 @@ class Home extends React.Component {
           </div>
         </div>
       );
-  }else{
+  }else if (getCountdown()[4] > 0){
     return (
       <div className="container">
+        <div className="timer">
+            <div>Auction closes in</div>
+            <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Min <span id="seconds"></span> Sec
+          </div>
         <h1 className="title">Men Auction</h1>
         <div className='row'>      
         <div className="item">
@@ -185,7 +215,13 @@ class Home extends React.Component {
       </div>
       </div>
     );
-  }
+    }else{
+      return(
+        <div className="auction-over">
+        <div>Auction Closed</div>        
+        </div>
+      )
+    }
   }
 }
 
