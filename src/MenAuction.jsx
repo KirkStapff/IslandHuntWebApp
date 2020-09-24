@@ -116,13 +116,12 @@ class Home extends React.Component {
         <h1 className="title">Men Auction</h1>
         <div className='row'>      
         <div className="item">
-            <h2>Title for Item</h2>
+            <h2>Keerome Maybury</h2>
             <span>
-              <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Cras facilisis urna ornare ex volutpat, et
-          convallis erat elementum. Ut aliquam, ipsum vitae
-          gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-          metus nec massa. Maecenas hendrerit laoreet augue</p>
+              <img className="inline1" width="220px" src={require("../src/keerome.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Relax and enjoy style and comfort on board
+              this classic 55ft cruiser. Keerome will welcome you on board Traveler 
+              for a Cocktail Cruise for 8 People including processco and hors d’oeuvres</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
@@ -133,13 +132,13 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Title for Item</h2>
+            <h2>Captain Cook</h2>
             <span>
-              <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Cras facilisis urna ornare ex volutpat, et
-          convallis erat elementum. Ut aliquam, ipsum vitae
-          gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-          metus nec massa. Maecenas hendrerit laoreet augue</p>
+              <img className="inline1" width="220px" src={require("../src/dai.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Dai is offering to cook a 5 course seafood 
+              and lobster dinner for up to 10 people  at your home. You suppy the 
+              liquor we will suppy the food, Bartender and Waitress service and of
+              course Dai himself</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}, {this.state.name2}</h1>
@@ -153,13 +152,13 @@ class Home extends React.Component {
         <hr style={{height:'2px', color:'black',backgroundColor:'black'}}></hr>
         <div className="row">
         <div className="item">
-          <h2>Title for Item</h2>
+          <h2>Paul Lambert</h2>
           <span>
-            <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue</p>
+            <img className="inline1" width="220px" src={require("../src/paul.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">Paul lambert  - personal  trainer 
+            Paul will be teaching some easy to execute 
+            Defensive tactics to protect yourself and 
+            Escape to a safe place! 3 sessions for  8-10 people</p>
           </span>
           <span className="bidding">
             <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
@@ -170,13 +169,12 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Title for Item</h2>
+          <h2>Stratton Hatfield</h2>
           <span>
-            <img className="inline1" width="220px" src={require("../src/house.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue</p>
+            <img className="inline1" width="220px" src={require("../src/stratton.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">Cheers! The Swizzle Washing Machine will come to your party! 
+            2 Hours of the best Gosling's Rum Swizzle you've ever tasted served up by Mr. Hatfield and his Team.
+            Always a huge hit at every party.</p>
           </span>
           <span className="bidding">
             <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>

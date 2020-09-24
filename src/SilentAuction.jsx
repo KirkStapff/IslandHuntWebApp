@@ -161,7 +161,7 @@ class Home extends React.Component {
           <div className="item">
               <h2>One Week Stay at New Hampshire Vacation Home</h2>
               <span>
-                <img className="inline1" width="220px" src={require("../src/newhampshirehouse.jpg")} alt="Bosom Buddies Logo"></img>
+                <img className="inline1" width="300px" src={require("../src/newhampshirehouse.jpg")} alt="Bosom Buddies Logo"></img>
                 <p className="inline2">Located in Jackson, in the Mt Washington Valley in Northern New Hampshire, about 3 hour’s drive north of Boston.
                   Offering four good sized bedrooms, gym and games room/bar. There are five ski hills within 30 minutes of the house, if someone wants to use it for
                   skiing. It is also a lovely house in the summer and the Fall. There will be some black-out periods, but sufficient flexibility.</p>
@@ -304,7 +304,6 @@ class Home extends React.Component {
               <img className="inline1" width="220px" src={require("../src/costa.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Visit beautiful Costa Rica , spend  7 nights in a 2 bedroom villa at the 
               luxurious Villas Las Ventanas in Janquial on the West Coast.
-              Costa Rica is filled with rainforests, beaches, rivers, valleys and biodiverse wildlife.
               A wonderful place to be as busy as you want or to just relax.</p>
             </span>
             <span className="bidding">
