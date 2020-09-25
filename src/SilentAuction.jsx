@@ -147,7 +147,7 @@ class Home extends React.Component {
               Name: <input id="input_name" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
             </div>
             <div className="enterHouse">
-              House: <input id="input_house" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
+              Email: <input id="input_house" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
               <div className="submitButton">
               <button className = "biddingButton" onClick={this.submit}>Submit</button>
               </div>
@@ -173,7 +173,7 @@ class Home extends React.Component {
                   skiing. It is also a lovely house in the summer and the Fall. There will be some black-out periods, but sufficient flexibility.</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}- {this.state.name1}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
@@ -189,7 +189,7 @@ class Home extends React.Component {
                   ingredients with ease. And for even more versatility, the power hub fits optional attachments from food grinders to pasta makers and more.</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}, {this.state.name2}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}- {this.state.name2}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
@@ -203,7 +203,7 @@ class Home extends React.Component {
               <p className="inline2">Rake in the $$$$$$ with $100 worth of different scratch cards.</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}- {this.state.name3}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
@@ -217,7 +217,7 @@ class Home extends React.Component {
                 <p className="inline2">Travel voucher from Watlington and Conyers Travel</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}- {this.state.name4}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
@@ -231,7 +231,7 @@ class Home extends React.Component {
               <p className="inline2">Enjoy a wonderful meal at any of these three restaurants, worth up to $250</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}, {this.state.name5}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}- {this.state.name5}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue5 = c} type="number" />
@@ -249,7 +249,7 @@ class Home extends React.Component {
                   Seal Rum. </p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}, {this.state.name6}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue6 = c} type="number" />
@@ -265,7 +265,7 @@ class Home extends React.Component {
               Doesn't get much better than that!</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}, {this.state.name7}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}- {this.state.name7}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue7 = c} type="number" />
@@ -281,7 +281,7 @@ class Home extends React.Component {
                A wonderful family fun day, all expenses paid.</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}, {this.state.name8}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}- {this.state.name8}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue8 = c} type="number" />
@@ -297,7 +297,7 @@ class Home extends React.Component {
                 Also included are Smores and 3 bottles of Prosecco!</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item9}, {this.state.name9}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item9}- {this.state.name9}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue9 = c} type="number" />
@@ -313,7 +313,7 @@ class Home extends React.Component {
               A wonderful place to be as busy as you want or to just relax.</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item10}, {this.state.name10}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item10}- {this.state.name10}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue10 = c} type="number" />
@@ -329,7 +329,7 @@ class Home extends React.Component {
               beautiful 2 bedroom New York Apartment</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item11}, {this.state.name11}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item11}- {this.state.name11}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue11 = c} type="number" />
@@ -343,7 +343,7 @@ class Home extends React.Component {
               <p className="inline2">A chance to walk inside the ropes as an honorary spectator of the Bermuda Championship Golf Tournament</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item12}, {this.state.name12}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item12}- {this.state.name12}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue12 = c} type="number" />
@@ -359,7 +359,7 @@ class Home extends React.Component {
               See bermuda like you’ve never seen it before!</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item13}, {this.state.name13}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item13}- {this.state.name13}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue13 = c} type="number" />
@@ -373,7 +373,7 @@ class Home extends React.Component {
               <p className="inline2">$150 voucher from 1609 design plus Handbag and Accessories</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item14}, {this.state.name14}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item14}- {this.state.name14}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue14 = c} type="number" />
@@ -387,12 +387,16 @@ class Home extends React.Component {
               <p className="inline2">Brunch for two at Fourways plus a new Handbag, Scarf and Necklace</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item15}, {this.state.name15}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item15}- {this.state.name15}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue15 = c} type="number" />
             <button className="biddingButton" onClick={()=>testBid("Item O", this.state.item15, this.bidValue15.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
+          </div>
+          <div className="footer">
+          <img width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
+          All proceeds go towards P.A.L.S cancer care
           </div>
         </div>
       );
@@ -414,7 +418,7 @@ class Home extends React.Component {
                   skiing. It is also a lovely house in the summer and the Fall. There will be some black-out periods, but sufficient flexibility.</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}- {this.state.name1}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
@@ -430,7 +434,7 @@ class Home extends React.Component {
                   ingredients with ease. And for even more versatility, the power hub fits optional attachments from food grinders to pasta makers and more.</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}, {this.state.name2}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}- {this.state.name2}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
@@ -444,10 +448,10 @@ class Home extends React.Component {
             <h2>Rake in the $$$$$</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/rakingcash.png")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Rake in the $$$$$$ with $100 worth of different scratch cards.</p>
+              <p className="inline2">Rake in the $$$$$$ with $100 worth of different scratch cards. Who knows what you could win? Chrissy will collect all the money from the scratch cards for you.</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}- {this.state.name3}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
@@ -461,7 +465,7 @@ class Home extends React.Component {
                 <p className="inline2">Travel voucher from Watlington and Conyers Travel</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}- {this.state.name4}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
@@ -477,7 +481,7 @@ class Home extends React.Component {
               <p className="inline2">Enjoy a wonderful meal at any of these three restaurants, worth up to $250</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}, {this.state.name5}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}- {this.state.name5}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue5 = c} type="number" />
@@ -495,7 +499,7 @@ class Home extends React.Component {
                   Seal Rum. </p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}, {this.state.name6}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue6 = c} type="number" />
@@ -513,7 +517,7 @@ class Home extends React.Component {
               Doesn't get much better than that!</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}, {this.state.name7}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}- {this.state.name7}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue7 = c} type="number" />
@@ -529,7 +533,7 @@ class Home extends React.Component {
               A wonderful family fun day, all expenses paid.</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}, {this.state.name8}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}- {this.state.name8}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue8 = c} type="number" />
@@ -547,7 +551,7 @@ class Home extends React.Component {
                 Also included are Smores and 3 bottles of Prosecco!</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item9}, {this.state.name9}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item9}- {this.state.name9}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue9 = c} type="number" />
@@ -564,7 +568,7 @@ class Home extends React.Component {
               A wonderful place to be as busy as you want or to just relax.</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item10}, {this.state.name10}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item10}- {this.state.name10}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue10 = c} type="number" />
@@ -582,7 +586,7 @@ class Home extends React.Component {
               beautiful 2 bedroom New York Apartment</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item11}, {this.state.name11}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item11}- {this.state.name11}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue11 = c} type="number" />
@@ -596,7 +600,7 @@ class Home extends React.Component {
               <p className="inline2">A chance to walk inside the ropes as an honorary spectator of the Bermuda Championship Golf Tournament</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item12}, {this.state.name12}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item12}- {this.state.name12}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue12 = c} type="number" />
@@ -614,7 +618,7 @@ class Home extends React.Component {
               See bermuda like you’ve never seen it before!</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item13}, {this.state.name13}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item13}- {this.state.name13}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue13 = c} type="number" />
@@ -628,7 +632,7 @@ class Home extends React.Component {
               <p className="inline2">$150 voucher from 1609 design plus Handbag and Accessories</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item14}, {this.state.name14}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item14}- {this.state.name14}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue14 = c} type="number" />
@@ -644,7 +648,7 @@ class Home extends React.Component {
               <p className="inline2">Brunch for two at Fourways plus a new Handbag, Scarf and Necklace</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item15}, {this.state.name15}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item15}- {this.state.name15}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue15 = c} type="number" />
@@ -652,6 +656,10 @@ class Home extends React.Component {
             </span>
           </div>
         </div>
+        <div className="footer">
+          <img width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
+          All proceeds go towards P.A.L.S cancer care
+          </div>
       </div>
       );
     }

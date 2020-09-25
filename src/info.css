@@ -13,7 +13,7 @@
 
 .info_title{
     font-size:42px;
-    color:black;
+    color:palevioletred;
 }
 
 .text{
@@ -48,7 +48,7 @@
 }
 
 .info_input{
-    width: 300px;
+    min-width: 30px;
     height: 100px;
     align-content: start;
     justify-content: start;

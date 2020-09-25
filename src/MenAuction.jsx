@@ -83,7 +83,10 @@ class Home extends React.Component {
         item4: json[18]['Bid'],        
         item5: json[19]['Bid'],        
         item6: json[20]['Bid'],       
-        item7: json[21]['Bid'],
+        item7: json[21]['Bid'],        
+        item8: json[22]['Bid'],        
+        item9: json[23]['Bid'],       
+        item10: json[24]['Bid'],
         name1: json[15]['Name'],
         name2: json[16]['Name'],
         name3: json[17]['Name'],
@@ -91,6 +94,9 @@ class Home extends React.Component {
         name5: json[19]['Name'],
         name6: json[20]['Name'],        
         name7: json[21]['Name'],
+        name8: json[22]['Name'],
+        name9: json[23]['Name'],        
+        name10: json[24]['Name'],
         isLoaded: true
       })    
     
@@ -132,7 +138,7 @@ class Home extends React.Component {
               Name: <input id="input_name" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
             </div>
             <div className="enterHouse">
-              House: <input id="input_house" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
+              Email: <input id="input_house" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
               <div className="submitButton">
               <button className = "biddingButton" onClick={this.submit}>Submit</button>
               </div>
@@ -158,7 +164,7 @@ class Home extends React.Component {
                 for a Cocktail Cruise for 8 People including processco and hors d’oeuvres</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}- {this.state.name1}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
@@ -166,7 +172,7 @@ class Home extends React.Component {
               </span>
             </div>
             <div className="item">
-              <h2>Captain Cook</h2>
+              <h2>Dai James</h2>
               <span>
                 <img className="inline1" width="220px" src={require("../src/dai.jpg")} alt="Bosom Buddies Logo"></img>
                 <p className="inline2">Dai is offering to cook a 5 course seafood 
@@ -175,7 +181,7 @@ class Home extends React.Component {
                 course Dai himself</p>
               </span>
               <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}, {this.state.name2}</h1>
+                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}- {this.state.name2}</h1>
               </span>
               <span className="bidding">            
               <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
@@ -191,7 +197,7 @@ class Home extends React.Component {
               Escape to a safety! 3 sessions for  8-10 people</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}- {this.state.name3}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
@@ -207,7 +213,7 @@ class Home extends React.Component {
               Always a huge hit at every party.</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}- {this.state.name4}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
@@ -226,7 +232,7 @@ class Home extends React.Component {
               </p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}, {this.state.name5}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}- {this.state.name5}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue5 = c} type="number" />
@@ -242,7 +248,7 @@ class Home extends React.Component {
             </p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}, {this.state.name6}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue6 = c} type="number" />
@@ -257,13 +263,17 @@ class Home extends React.Component {
             </p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}, {this.state.name7}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}- {this.state.name7}</h1>
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue7 = c} type="number" />
           <button className="biddingButton" onClick={()=>testBid("Man G", this.state.item7, this.bidValue7.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
+        <div>
+          <img className="inline1" width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
+          All proceeds go towards P.A.L.S cancer care
+          </div>
         </div>
       );
     }else{
@@ -284,7 +294,7 @@ class Home extends React.Component {
               for a Cocktail Cruise for 8 People including processco and hors d’oeuvres</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}, {this.state.name1}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}- {this.state.name1}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
@@ -301,7 +311,7 @@ class Home extends React.Component {
               course Dai himself</p>
             </span>
             <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}, {this.state.name2}</h1>
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}- {this.state.name2}</h1>
             </span>
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
@@ -321,7 +331,7 @@ class Home extends React.Component {
             Escape to a safe place! 3 sessions for  8-10 people</p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}, {this.state.name3}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}- {this.state.name3}</h1>
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
@@ -337,7 +347,7 @@ class Home extends React.Component {
             Always a huge hit at every party.</p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}, {this.state.name4}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}- {this.state.name4}</h1>
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
@@ -358,7 +368,7 @@ class Home extends React.Component {
             </p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}, {this.state.name5}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}- {this.state.name5}</h1>
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue5 = c} type="number" />
@@ -374,7 +384,7 @@ class Home extends React.Component {
             </p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}, {this.state.name6}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue6 = c} type="number" />
@@ -391,14 +401,74 @@ class Home extends React.Component {
             </p>
           </span>
           <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}, {this.state.name7}</h1>
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}- {this.state.name7}</h1>
           </span>
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue7 = c} type="number" />
           <button className="biddingButton" onClick={()=>testBid("Man G", this.state.item7, this.bidValue7.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
+        <div className="item">
+          <h2>Victor Raposo</h2>
+          <span>
+            <img className="inline1" width="220px" src={require("../src/victor.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">Yard Clean. Up 3 Men Will Come To Your House For 3 Hours To Do Yard Work. Plus 1 Trucking if needed.
+            </p>
+          </span>
+          <span className="bidding">
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}- {this.state.name8}</h1>
+          </span>
+          <span className="bidding">            
+          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue8 = c} type="number" />
+          <button className="biddingButton" onClick={()=>testBid("Man H", this.state.item8, this.bidValue8.value, this.state.house, this.state.name)}> Place Bid </button>
+          </span>
+        </div>
       </div>
+      <div className="row">
+      <div className="item">
+          <h2>Ian Bridges</h2>
+          <span>
+            <img className="inline1" width="220px" src={require("../src/ian.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">Meet Ian Bridges,  one of Bermuda's most prominent surfers. 
+            Surf in Bermuda's warm waters, the offshore barrier reef on the 
+            southern shoreline make for the perfect conditions for beginners
+            to learn, and advanced surfers to hone their skills.
+            or Explore the shady and serene channels of the Hungry Bay
+            mangroves on a private paddleboard tour with a local outdoor enthusiast.
+            This offer is for 4 people for 4 hours.
+            </p>
+          </span>
+          <span className="bidding">
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item9}- {this.state.name9}</h1>
+          </span>
+          <span className="bidding">            
+          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue9 = c} type="number" />
+          <button className="biddingButton" onClick={()=>testBid("Man I", this.state.item9, this.bidValue9.value, this.state.house, this.state.name)}> Place Bid </button>
+          </span>
+        </div>
+        <div className="item">
+          <h2>Gentlemen in Waiting</h2>
+          <span>
+            <img className="inline1" width="220px" src={require("../src/gentlemen.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">This group of Gentlemen will come to your house to 
+            wine and dine you and your friends for the entire evening. 
+            Dinner and drinks for up to 10 people. Food and wine will be provided by
+           “ The Gentlemen - In – Waiting”
+            </p>
+          </span>
+          <span className="bidding">
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item10}- {this.state.name10}</h1>
+          </span>
+          <span className="bidding">            
+          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue10 = c} type="number" />
+          <button className="biddingButton" onClick={()=>testBid("Man J", this.state.item10, this.bidValue10.value, this.state.house, this.state.name)}> Place Bid </button>
+          </span>
+        </div>
+      </div>
+      <div className="footer">
+          <img className="inline1" width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
+          <p>   All proceeds go towards P.A.L.S cancer care</p>
+          </div>
       </div>
     );}
     }else{

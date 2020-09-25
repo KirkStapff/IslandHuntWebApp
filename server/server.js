@@ -1,9 +1,32 @@
 const path = require("path");
 const mysql = require('mysql');
 var express = require('express');
-var http = require('http')
-http.globalAgent.maxSockets= 7
-const bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
+
+const sendEmail = (message, from)=>{
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'kirkstapff88@gmail.com',
+      pass: 'K!RK@@)*'
+    }
+  });
+  
+  var mailOptions = {
+    from: from,
+    to: 'chrissyinbda@gmail.com',
+    subject: 'Bosom Buddies Contact',
+    text: message + " -- Message From "+ from
+  };
+  
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+}
 
 var app = express();
 const port = 3003
@@ -51,6 +74,12 @@ app.get('/test', (req, res)=>{
   });
 })
 
+app.all('/message', (req, res)=>{
+  sendEmail(req.body.floop, req.body.from);
+  console.log(req.body.floop)
+  res.send("")
+})
+
 app.all('/bid', (req, res) => {
   query = 'SELECT Max(Bid) FROM Bids WHERE Item="'+req.body.item+'"'
   //freshConn = mysql.createConnection(connectionDetails)
@@ -61,7 +90,6 @@ app.all('/bid', (req, res) => {
     console.log(rows[0]['Max(Bid)']+" < "+req.body.bid)
     if(rows[0]['Max(Bid)'] < req.body.bid){
       query2 = 'INSERT INTO `BosomBuddiesAuctions`.`Bids` (`Item`, `Name`, `House`, `Bid`) VALUES ("'+req.body.item+'", "'+req.body.name+'", "'+req.body.house+'", "'+req.body.bid+'")';
-      //freshConn2 = mysql.createConnection(connectionDetails)
       queryDB(query2, (err, rows) => {
       if(err){
           console.log("ring ting tong");
@@ -69,17 +97,8 @@ app.all('/bid', (req, res) => {
       console.log(query2)
       res.send(rows)
       })
-      //freshConn2.end()
     }    
   })
-  //freshConn.end()
-  res.on('close', function(){})
-  res.on('finish', function(){})
-  res.on('drain', function(){})
-  res.on('error', function(){})
-  res.on('pipe', function(){})
-  res.on('unpipe', function(){})
-  res.on('data', function(){})
 })
 
 app.get('*', (req,res) =>{
