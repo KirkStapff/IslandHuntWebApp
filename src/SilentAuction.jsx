@@ -143,6 +143,7 @@ class Home extends React.Component {
     if(this.state.name==null){
       return (
         <div className="main">
+          <h1 className="title">Silent Auction</h1>  
           <div className="popup">
             <p className="popupText" style={{marginLeft:'12px'}}>Login</p>
             <div className="enterName">
@@ -258,13 +259,13 @@ class Home extends React.Component {
                 Scotch or Cognac. Consider it the ultimate sipping rum. We do.<br/>
                 RESERVE PRICE $195 <br/>(The lantern is not included)</p>
             </span>
-            <span className="bidding">
+            <div marginLeft="32px" className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
-            </span>
-            <span className="bidding">            
+            </div>
+            <div className="bidding" marginLeft="32px">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue6 = c} type="number" />
             <button className="biddingButton" onClick={()=>testBid("Item F", this.state.item6, this.bidValue6.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
+            </div>
           </div>
           <div className="item">
             <h2>Pamper Yourself</h2>

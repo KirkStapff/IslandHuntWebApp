@@ -33,11 +33,11 @@
     height: 250px;
     width: 600px;
     border-radius: 30px;
-    top: 180px;
+    top: 240px;
     background-color: palevioletred;
     border: 2px solid black;
     margin-bottom: 32px;
-    margin-top: -26px;
+    margin-top: 50px;
     align-content: center;
 }
 
@@ -142,9 +142,7 @@ button{
 
 .item{
     margin: 16px 0px 0px 32px;
-    display:flex;
-    flex-direction:column;
-    align-content: center;
+    align-items: center;
 }
 
 .bidding{

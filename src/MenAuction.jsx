@@ -134,6 +134,7 @@ class Home extends React.Component {
     if(this.state.name==null){
       return (
         <div className="main">
+        <h1 className="title">Men Auction</h1>
           <div className="popup">
             <p className="popupText" style={{marginLeft:'12px'}}>Login</p>
             <div className="enterName">
