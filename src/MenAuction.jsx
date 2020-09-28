@@ -87,7 +87,8 @@ class Home extends React.Component {
         item8: json[23]['Bid'],        
         item9: json[24]['Bid'],       
         item10: json[25]['Bid'],    
-        item11: json[26]['Bid'],
+        item11: json[26]['Bid'], 
+        item12: json[27]['Bid'],
         name1: json[16]['Name'],
         name2: json[17]['Name'],
         name3: json[18]['Name'],
@@ -98,7 +99,8 @@ class Home extends React.Component {
         name8: json[23]['Name'],
         name9: json[24]['Name'],        
         name10: json[25]['Name'],     
-        name11: json[26]['Name'],
+        name11: json[26]['Name'],   
+        name12: json[27]['Name'],
         isLoaded: true
       })    
     
@@ -349,6 +351,27 @@ class Home extends React.Component {
           <span className="bidding">            
           <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue11 = c} type="number" />
           <button className="biddingButton" onClick={()=>testBid("Man K", this.state.item11, this.bidValue11.value, this.state.house, this.state.name)}> Place Bid </button>
+          </span>
+        </div>
+        <div className="item">
+          <h2>Chef Angelo<br/>Cooking Demonstration</h2>
+          <span>
+            <img className="inline1" width="350px" src={require("../src/angelo.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">Oin chef angelo for a 2 hour cooking demonstration  at your house and 
+            The best part is you get to eat his amazing cooking as he prepares it !!<br/>
+            Menu : <br/>
+            Bruschetta or crostini with tomatoes and fresh mozzarella<br/>
+            Beets and avocado starter<br/>
+            Sweet potato gnocchi  with either lobster or shrimps<br/>
+            As well as 2 bottles of prosecco and dessert
+            </p>
+          </span>
+          <span className="bidding">
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item12}- {this.state.name12}</h1>
+          </span>
+          <span className="bidding">            
+          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue12 = c} type="number" />
+          <button className="biddingButton" onClick={()=>testBid("Man L", this.state.item12, this.bidValue12.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
       <div className="footer">
