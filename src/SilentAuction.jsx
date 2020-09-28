@@ -92,6 +92,7 @@ class Home extends React.Component {
         item13: json[12]['Bid'],
         item14: json[13]['Bid'],
         item15: json[14]['Bid'],
+        item16: json[15]['Bid'],
         name1: json[0]['Name'],
         name2: json[1]['Name'],
         name3: json[2]['Name'],
@@ -106,7 +107,8 @@ class Home extends React.Component {
         name12: json[11]['Name'],
         name13: json[12]['Name'],
         name14: json[13]['Name'],
-        name15: json[14]['Name'],
+        name15: json[14]['Name'],        
+        name16: json[15]['Name'],
         isLoaded: true
       })    
     
@@ -156,7 +158,6 @@ class Home extends React.Component {
         </div>
       );
   }else if (getCountdown()[4] > 0){
-    if(this.state.width < 800){
       return (
         <div className="container">
           <div className="timer">
@@ -165,11 +166,11 @@ class Home extends React.Component {
           </div>
           <h1 className="title">Silent Auction</h1>  
           <div className="item">
-              <h2>One Week Stay at New Hampshire Vacation Home</h2>
+              <h2>New Hampshire Vacation Home</h2>
               <span>
                 <img className="inline1" width="300px" src={require("../src/newhampshirehouse.jpg")} alt="Bosom Buddies Logo"></img>
                 <p className="inline2">Located in Jackson, in the Mt Washington Valley in Northern New Hampshire, about 3 hour’s drive north of Boston.
-                  Offering four good sized bedrooms, gym and games room/bar. There are five ski hills within 30 minutes of the house, if someone wants to use it for
+                  Offering four good sized bedrooms, gym and games room/bar for one week stay. There are five ski hills within 30 minutes of the house, if someone wants to use it for
                   skiing. It is also a lovely house in the summer and the Fall. There will be some black-out periods, but sufficient flexibility.</p>
               </span>
               <span className="bidding">
@@ -228,7 +229,7 @@ class Home extends React.Component {
             <h2>$250 voucher to Bonefish, Bella Vista or Cafe Amici</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/bellavista.png")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Enjoy a wonderful meal at any of these three restaurants, worth up to $250</p>
+              <p className="inline2">Enjoy a $250 voucher to enjoy Breakfast, Lunch and Dinner at each one of Bermuda’s finest restaurants or a special meal at just one.</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}- {this.state.name5}</h1>
@@ -241,12 +242,21 @@ class Home extends React.Component {
           <div className="item">
             <h2>Bermuda Heritage Collection</h2>
             <span>
-              <img className="inline1" width="220px" src={require("../src/blackrum.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Lili Bermuda re-created the timeless elegance of the
-                  original fragrance from the the Mary Celestia. Soft notes of rose and orange flower, sparkling
-                  grapefruit complimented by warm rosewood and amber tones. Appropriately called Gosling’s Family Reserve Old Rum, it is crafted
-                  from the same incomparable Bermuda blend as our renowned Black
-                  Seal Rum. </p>
+              <img className="inline1" width="240px" src={require("../src/blackrum.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline3">MARY CELESTIA<br/>
+                In 1854, the Mary Celestia, a Civil War blockade runner sailing to
+                Charleston, SC, sank off the south shore of Bermuda. Two bottles of
+                perfume from Piesse & Lubin, London were recovered from the
+                shipwreck. Lili Bermuda re-created the timeless elegance of the
+                original fragrance. Soft notes of rose and orange flower, sparkling
+                grapefruit complimented by warm rosewood and amber tones.<br/>
+                GOSLING’S FAMILY RESERVE OLD RUM<br/>
+                Appropriately called Gosling’s Family Reserve Old Rum, it is crafted
+                from the same incomparable Bermuda blend as our renowned Black
+                Seal Rum. But, we age it in our dark barrels even longer, until it
+                acquires an extra luscious, nuanced complexity much like a rare
+                Scotch or Cognac. Consider it the ultimate sipping rum. We do.<br/>
+                RESERVE PRICE $195 <br/>(The lantern is not included)</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
@@ -260,9 +270,8 @@ class Home extends React.Component {
             <h2>Pamper Yourself</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/pamper.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">2020 got you all stressed out?Enjoy a 60 minute facial and deluxe pedicure by a 
-              certified beauty therapist in the comfort of your own home...
-              Doesn't get much better than that!</p>
+              <p className="inline2">Enjoy a 60 minute deluxe pedicure by a certified beauty therapist in the comfort of your own home... <br/>
+              Doesn't get much better than that !!!</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}- {this.state.name7}</h1>
@@ -273,12 +282,11 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Family Fun Day for Four</h2>
+            <h2>Family Fun Day</h2>
             <span>
-              <img className="inline1" width="220px" src={require("../src/fungolf.png")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Start your day of with YoCherry before taking the Ferry to Dockyard, 
-              where you will enjoy lunch at Bonefish. Then heading to Fun Golf before return to Hamilton on the Ferry.
-               A wonderful family fun day, all expenses paid.</p>
+              <img className="inline1" width="220px" src={require("../src/funday.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">Start the day off dockyard, Then enjoy a game of Fun Golf before heading back to Hamilton on the ferry <br/>
+              Vouchers included</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}- {this.state.name8}</h1>
@@ -340,7 +348,8 @@ class Home extends React.Component {
             <h2>Bermuda Gold Championship</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/golf.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">A chance to walk inside the ropes as an honorary spectator of the Bermuda Championship Golf Tournament</p>
+              <p className="inline2">This entitles two (2) people to walk inside the ropes on Sunday November 1st with the players. <br/>
+              Witness every shot from this once-in-a-lifetime perspective</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item12}- {this.state.name12}</h1>
@@ -392,6 +401,24 @@ class Home extends React.Component {
             <span className="bidding">            
             <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue15 = c} type="number" />
             <button className="biddingButton" onClick={()=>testBid("Item O", this.state.item15, this.bidValue15.value, this.state.house, this.state.name)}> Place Bid </button>
+            </span>
+          </div>
+          <div className="item">
+            <h2>Outward Bound</h2>
+            <span>
+              <img className="inline1" width="220px" src={require("../src/outwardbound.jpg")} alt="Bosom Buddies Logo"></img>
+              <p className="inline2">A team building day for 20 people
+              includes a ropes course, swimming,
+              kayaking, and other team
+              building activities<br/>
+              A SINGLE DAY OF OUTWARDBOUND WILL LAST A LIFETIME</p>
+            </span>
+            <span className="bidding">
+              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item16}- {this.state.name16}</h1>
+            </span>
+            <span className="bidding">            
+            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue16 = c} type="number" />
+            <button className="biddingButton" onClick={()=>testBid("Item P", this.state.item16, this.bidValue16.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
           </div>
           <div className="footer">
@@ -400,269 +427,6 @@ class Home extends React.Component {
           </div>
         </div>
       );
-    }else{
-      return (
-        <div className="container">
-          <div className="timer">
-            <div>Auction closes in</div>
-            <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Min <span id="seconds"></span> Sec
-          </div>
-          <h1 className="title">Silent Auction</h1>
-          <div className='row'>      
-          <div className="item">
-              <h2>One Week Stay at New Hampshire Vacation Home</h2>
-              <span>
-                <img className="inline1" width="220px" src={require("../src/newhampshirehouse.jpg")} alt="Bosom Buddies Logo"></img>
-                <p className="inline2">Located in Jackson, in the Mt Washington Valley in Northern New Hampshire, about 3 hour’s drive north of Boston.
-                  Offering four good sized bedrooms, gym and games room/bar. There are five ski hills within 30 minutes of the house, if someone wants to use it for
-                  skiing. It is also a lovely house in the summer and the Fall. There will be some black-out periods, but sufficient flexibility.</p>
-              </span>
-              <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}- {this.state.name1}</h1>
-              </span>
-              <span className="bidding">            
-              <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
-              <button className="biddingButton" onClick={()=>testBid("Item A", this.state.item1, this.bidValue1.value, this.state.house, this.state.name)}> Place Bid </button>
-              </span>
-            </div>
-            <div className="item">
-              <h2>KitchenAid Artisan Series Stand-Mixer</h2>
-              <span>
-                <img className="inline1" width="220px" src={require("../src/kitchenaidmixer.jpg")} alt="Bosom Buddies Logo"></img>
-                <p className="inline2">Easily make your favorite cakes and multiple batches of cookie dough with the 5-quart stainless steel mixing bowl
-                with comfortable handle. With 10 speeds, the standmixer will quickly become your kitchen’s culinary center as you mix, knead and whip
-                  ingredients with ease. And for even more versatility, the power hub fits optional attachments from food grinders to pasta makers and more.</p>
-              </span>
-              <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}- {this.state.name2}</h1>
-              </span>
-              <span className="bidding">            
-              <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
-              <button className="biddingButton" onClick={()=>testBid("Item B", this.state.item2, this.bidValue2.value, this.state.house, this.state.name)}> Place Bid </button>
-              </span>
-            </div>
-          </div>
-          <hr style={{height:'5px', color:'black',backgroundColor:'black'}}></hr>
-          <div className="row">
-            <div className="item">
-            <h2>Rake in the $$$$$</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/rakingcash.png")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Rake in the $$$$$$ with $100 worth of different scratch cards. Who knows what you could win? Chrissy will collect all the money from the scratch cards for you.</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}- {this.state.name3}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item C", this.state.item3, this.bidValue3.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-              <h2>$700 Travel Voucher</h2>
-              <span>
-                <img className="inline1" width="220px" src={require("../src/travelvoucher.jpg")} alt="Bosom Buddies Logo"></img>
-                <p className="inline2">Travel voucher from Watlington and Conyers Travel</p>
-              </span>
-              <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}- {this.state.name4}</h1>
-              </span>
-              <span className="bidding">            
-              <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
-              <button className="biddingButton" onClick={()=>testBid("Item D", this.state.item4, this.bidValue4.value, this.state.house, this.state.name)}> Place Bid </button>
-              </span>
-            </div>
-        </div>
-        <div className="row">
-          <div className="item">
-            <h2>$250 voucher to Bonefish, Bella Vista or Cafe Amici</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/bellavista.png")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Enjoy a wonderful meal at any of these three restaurants, worth up to $250</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}- {this.state.name5}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue5 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item E", this.state.item5, this.bidValue5.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-            <h2>Bermuda Heritage Collection</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/blackrum.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Lili Bermuda re-created the timeless elegance of the
-                  original fragrance from the the Mary Celestia. Soft notes of rose and orange flower, sparkling
-                  grapefruit complimented by warm rosewood and amber tones. Appropriately called Gosling’s Family Reserve Old Rum, it is crafted
-                  from the same incomparable Bermuda blend as our renowned Black
-                  Seal Rum. </p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue6 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item F", this.state.item6, this.bidValue6.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="item">
-            <h2>Pamper Yourself</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/pamper.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">2020 got you all stressed out?Enjoy a 60 minute facial and deluxe pedicure by a 
-              certified beauty therapist in the comfort of your own home...
-              Doesn't get much better than that!</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}- {this.state.name7}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue7 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item G", this.state.item7, this.bidValue7.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-            <h2>Family Fun Day for Four</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/fungolf.png")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Start your day of with YoCherry before taking the Ferry to Dockyard, 
-              where you will enjoy lunch at Bonefish. Then heading to Fun Golf before return to Hamilton on the Ferry.
-              A wonderful family fun day, all expenses paid.</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}- {this.state.name8}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue8 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item H", this.state.item8, this.bidValue8.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="item">
-            <h2>Bonfire Evening</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/bonfire.png")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">A Bonfire set up for 20 people including setup , 3 hours of firewood, 1 table, garbage container,
-                fire extinguisher, plates and cooking utensils.
-                Also included are Smores and 3 bottles of Prosecco!</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item9}- {this.state.name9}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue9 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item I", this.state.item9, this.bidValue9.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-            <h2>Villas Las Ventanas in Janquial, Costa Rica</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/costa.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Visit beautiful Costa Rica , spend  7 nights in a 2 bedroom villa at the 
-              luxurious Villas Las Ventanas in Janquial on the West Coast.
-              Costa Rica is filled with rainforests, beaches, rivers, valleys and biodiverse wildlife.
-              A wonderful place to be as busy as you want or to just relax.</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item10}- {this.state.name10}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue10 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item J", this.state.item10, this.bidValue10.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="item">
-            <h2>Four Day Stay in New York Apartment</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/nyapt.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Shop 'Til You Drop!
-              4 days 3 nights stay in this
-              beautiful 2 bedroom New York Apartment</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item11}- {this.state.name11}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue11 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item K", this.state.item11, this.bidValue11.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-            <h2>Bermuda Golf Championship</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/golf.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">A chance to walk inside the ropes as an honorary spectator of the Bermuda Championship Golf Tournament</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item12}- {this.state.name12}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue12 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item L", this.state.item12, this.bidValue12.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="item">
-            <h2>Electric Bike Tour</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/podego.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Pedego electric bike rental for 2 people. 
-              Choose to tour harrington sound , coopers island or st. Georges.
-              See bermuda like you’ve never seen it before!</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item13}- {this.state.name13}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue13 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item M", this.state.item13, this.bidValue13.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-            <h2>1609 Design</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/1609.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">$150 voucher from 1609 design plus Handbag and Accessories</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item14}- {this.state.name14}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue14 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item N", this.state.item14, this.bidValue14.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-        </div>
-        <div className="row">
-          <div className="item">
-            <h2>Brunch For Two and New Handbag and Necklace</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/fourways.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Brunch for two at Fourways plus a new Handbag, Scarf and Necklace</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item15}- {this.state.name15}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue15 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Item O", this.state.item15, this.bidValue15.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-        </div>
-        <div className="footer">
-          <img width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
-          All proceeds go towards P.A.L.S cancer care
-          </div>
-      </div>
-      );
-    }
   }else{
     return(
       <div className="auction-over">

@@ -23,6 +23,30 @@
   justify-content:center;
 }
 
+button{
+  
+  float: left;  
+  color: black;
+  text-align: center;
+  padding: 10px 16px 10px 16px;
+  text-decoration: none;
+  font-size: 110%;
+  font: bold;
+  outline: none;  
+  border-width: 0px;
+  background-color: white;
+}
+
+button:focus{
+  background-color: pink;
+  border-radius: 20px;
+}
+
+button:hover{
+  background-color: pink;
+  border-radius: 20px;
+}
+
 .main {
   background-color: pink;
   flex: 1;
@@ -32,9 +56,13 @@
   align-items: center;
 }
 
+.image{
+  margin-top: 45px;
+}
+
 .topnav {
   font-family: 'Arial Narrow Bold', sans-serif;
-  margin: 12px 0px 12px 8px; 
+  margin: 12px 0px 50px 8px; 
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,6 +72,17 @@
 
 /* Style the links inside the navigation bar */
 .topnav a {
+  float: left;  
+  color: black;
+  text-align: center;
+  padding: 10px 16px 10px 16px;
+  margin: 0px 0px 0px 0px;
+  text-decoration: none;
+  font-size: 110%;
+  font: bold;
+}
+
+.dropdown-menu{
   float: left;  
   color: black;
   text-align: center;

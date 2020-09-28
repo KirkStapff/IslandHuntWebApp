@@ -1,12 +1,16 @@
 
 import React, { Component } from "react";
 import { Route,  BrowserRouter } from "react-router-dom";
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 import Home from "./Home";
 import Contact from "./Contact";
 import About from "./About";
 import Sponsor from "./Sponsor";
 import SilentAuction from "./SilentAuction";
 import MenAuction from "./MenAuction";
+import ChildRun from './ChildRun';
+import AdultRun from './AdultRun';
 import '../src/index.css'
 
 
@@ -43,12 +47,16 @@ class Nav extends Component {
       <BrowserRouter>
         <div>
           <div className="topnav">
-          <img width="100px" height="90px" src={require("../src/logo-notext.png")} alt="Bosom Buddies Logo"/>
+          <img width="150px" className="image" src={require("../src/logo-notext.png")} alt="Bosom Buddies Logo"/>
             <a className="navitem" href="/">Home</a>
             <a href="about">About</a>
+            <DropdownButton title="Current Events">
+              <Dropdown.Item href="silent_auction">Silent Auction</Dropdown.Item>
+              <Dropdown.Item href="men_auction">Men Auction</Dropdown.Item>
+              <Dropdown.Item href="adult_run">Adult's Charity Run</Dropdown.Item>
+              <Dropdown.Item href="child_run">Children's Charity Run</Dropdown.Item>
+            </DropdownButton>
             <a href="contact">Contact</a>
-            <a href="silent_auction">Silent Auction</a>
-            <a href="men_auction">Men Auction</a>
           </div>
           <hr style={{height:'2px', color:'black',backgroundColor:'black'}}></hr>
           <div className="main">
@@ -58,6 +66,8 @@ class Nav extends Component {
             <Route path="/sponsors" component={Sponsor} />
             <Route path="/silent_auction" component={SilentAuction} />
             <Route path="/men_auction" component={MenAuction} />
+            <Route path="/adult_run" component={AdultRun} />
+            <Route path="/child_run" component={ChildRun} />
           </div>
         </div>
       </BrowserRouter>

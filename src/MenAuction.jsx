@@ -86,7 +86,8 @@ class Home extends React.Component {
         item7: json[21]['Bid'],        
         item8: json[22]['Bid'],        
         item9: json[23]['Bid'],       
-        item10: json[24]['Bid'],
+        item10: json[24]['Bid'],    
+        item11: json[25]['Bid'],
         name1: json[15]['Name'],
         name2: json[16]['Name'],
         name3: json[17]['Name'],
@@ -96,7 +97,8 @@ class Home extends React.Component {
         name7: json[21]['Name'],
         name8: json[22]['Name'],
         name9: json[23]['Name'],        
-        name10: json[24]['Name'],
+        name10: json[24]['Name'],     
+        name11: json[25]['Name'],
         isLoaded: true
       })    
     
@@ -147,136 +149,6 @@ class Home extends React.Component {
         </div>
       );
   }else if (getCountdown()[4] > 0){
-    if(this.state.width < 800){
-      return (
-        <div className="container">
-          <div className="timer">
-              <div>Auction closes in</div>
-              <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Min <span id="seconds"></span> Sec
-            </div>
-          <h1 className="title">Men Auction</h1>    
-          <div className="item">
-              <h2>Keerome Maybury</h2>
-              <span>
-                <img className="inline1" width="220px" src={require("../src/keerome.jpg")} alt="Bosom Buddies Logo"></img>
-                <p className="inline2">Relax and enjoy style and comfort on board
-                this classic 55ft cruiser. Keerome will welcome you on board Traveler 
-                for a Cocktail Cruise for 8 People including processco and hors d’oeuvres</p>
-              </span>
-              <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}- {this.state.name1}</h1>
-              </span>
-              <span className="bidding">            
-              <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue1 = c} type="number" />
-              <button className="biddingButton" onClick={()=>testBid("Man A", this.state.item1, this.bidValue1.value, this.state.house, this.state.name)}> Place Bid </button>
-              </span>
-            </div>
-            <div className="item">
-              <h2>Dai James</h2>
-              <span>
-                <img className="inline1" width="220px" src={require("../src/dai.jpg")} alt="Bosom Buddies Logo"></img>
-                <p className="inline2">Dai is offering to cook a 5 course seafood 
-                and lobster dinner for up to 10 people  at your home. You suppy the 
-                liquor we will suppy the food, Bartender and Waitress service and of
-                course Dai himself</p>
-              </span>
-              <span className="bidding">
-                <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item2}- {this.state.name2}</h1>
-              </span>
-              <span className="bidding">            
-              <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue2 = c} type="number" />
-              <button className="biddingButton" onClick={()=>testBid("Man B", this.state.item2, this.bidValue2.value, this.state.house, this.state.name)}> Place Bid </button>
-              </span>
-            </div>
-          <div className="item">
-            <h2>Paul Lambert</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/paul.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Paul will be teaching some easy to execute 
-              defensive tactics to protect yourself and 
-              Escape to a safety! 3 sessions for  8-10 people</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item3}- {this.state.name3}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue3 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Man C", this.state.item3, this.bidValue3.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-            <h2>Stratton Hatfield</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/stratton.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Cheers! The Swizzle Washing Machine will come to your party! 
-              2 Hours of the best Gosling's Rum Swizzle you've ever tasted served up by Mr. Hatfield and his Team.
-              Always a huge hit at every party.</p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item4}- {this.state.name4}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue4 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Man D", this.state.item4, this.bidValue4.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-            <h2>Stephen Corbishley</h2>
-            <span>
-              <img className="inline1" width="220px" src={require("../src/police.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">A party of 4 (2 adults and 2 children (age 10 and above) will be given the 
-              opportunity to join the Bermuda Police Service’s Tactical Operations Department.
-              Use the BPS firearms simulator where your abilities will be tested in a variety of dramatic ( computer) simulated situations.
-              See one of our K9 Units and test their dog within a variety of police related tasks, followed by the opportunity to meet our
-               other dogs including Falco our most recent  (and media famous) addition to the team
-              </p>
-            </span>
-            <span className="bidding">
-              <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item5}- {this.state.name5}</h1>
-            </span>
-            <span className="bidding">            
-            <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue5 = c} type="number" />
-            <button className="biddingButton" onClick={()=>testBid("Man E", this.state.item5, this.bidValue5.value, this.state.house, this.state.name)}> Place Bid </button>
-            </span>
-          </div>
-          <div className="item">
-          <h2>Captain Peter Rans</h2>
-          <span>
-            <img className="inline1" width="220px" src={require("../src/peter.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">A fantastic deep sea fishing experience! 6 people can enjoy 6 hours of  fishing on
-            OVERPROOF, a majestic 58ft Sportsman Custom Carolina convertible sportfishing boat.
-            </p>
-          </span>
-          <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item6}- {this.state.name6}</h1>
-          </span>
-          <span className="bidding">            
-          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue6 = c} type="number" />
-          <button className="biddingButton" onClick={()=>testBid("Man F", this.state.item6, this.bidValue6.value, this.state.house, this.state.name)}> Place Bid </button>
-          </span>
-        </div>
-        <div className="item">
-          <h2>Nadanja Bailey</h2>
-          <span>
-            <img className="inline1" width="220px" src={require("../src/nadanja.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Nadanja will join 6 people for 3 hours will on a pub crawl around Hamilton
-            </p>
-          </span>
-          <span className="bidding">
-            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item7}- {this.state.name7}</h1>
-          </span>
-          <span className="bidding">            
-          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue7 = c} type="number" />
-          <button className="biddingButton" onClick={()=>testBid("Man G", this.state.item7, this.bidValue7.value, this.state.house, this.state.name)}> Place Bid </button>
-          </span>
-        </div>
-        <div>
-          <img className="inline1" width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
-          All proceeds go towards P.A.L.S cancer care
-          </div>
-        </div>
-      );
-    }else{
     return (
       <div className="container">
         <div className="timer">
@@ -284,9 +156,8 @@ class Home extends React.Component {
             <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Min <span id="seconds"></span> Sec
           </div>
         <h1 className="title">Men Auction</h1>
-        <div className='row'>      
         <div className="item">
-            <h2>Keerome Maybury</h2>
+            <h2>Keerome Maybury<br/>-Cocktail cruise</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/keerome.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Relax and enjoy style and comfort on board
@@ -302,7 +173,7 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Captain Cook</h2>
+            <h2>Dai James<br/>-Seafood and Lobster dinner</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/dai.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Dai is offering to cook a 5 course seafood 
@@ -318,11 +189,8 @@ class Home extends React.Component {
             <button className="biddingButton" onClick={()=>testBid("Man B", this.state.item2, this.bidValue2.value, this.state.house, this.state.name)}> Place Bid </button>
             </span>
           </div>
-        </div>
-        <hr style={{height:'2px', color:'black',backgroundColor:'black'}}></hr>
-        <div className="row">
         <div className="item">
-          <h2>Paul Lambert</h2>
+          <h2>Paul Lambert<br/>-Self-Defense</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/paul.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">Paul lambert  - personal  trainer 
@@ -339,7 +207,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Stratton Hatfield</h2>
+          <h2>Stratton Hatfield<br/>-Swizzle Washing Machine</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/stratton.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">Cheers! The Swizzle Washing Machine will come to your party! 
@@ -354,17 +222,21 @@ class Home extends React.Component {
           <button className="biddingButton" onClick={()=>testBid("Man D", this.state.item4, this.bidValue4.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
-      </div>
-      <div className="row">
         <div className="item">
-          <h2>Stephen Corbishley</h2>
+          <h2>Stephen Corbishley<br/>-Police Day Experience</h2>
           <span>
-            <img className="inline1" width="220px" src={require("../src/police.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">A party of 4 (2 adults and 2 children (age 10 and above) will be given the 
-            opportunity to join the Bermuda Police Service’s Tactical Operations Department.
-            Use the BPS firearms simulator where your abilities will be tested in a variety of dramatic ( computer) simulated situations.
-            See one of our K9 Units and test their dog within a variety of police related tasks, followed by the opportunity to meet our
-              other dogs including Falco our most recent  (and media famous) addition to the team
+            <img className="inline1" height="220px" src={require("../src/police.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline3">The Commissioner of Police offers to the highest bidder a very special experience:
+            A party of 4 (2 adults and 2 children (age 10 and above)will be given the opportunity            
+            to join the Bermuda Police Service’s Tactical Operations Department to experience
+            first –hand one of  the most specialist aspects of police work, with the opportunity
+            to experience the following : To use the BPS firearms simulator,<br/>
+            To see one of our K9 Units and test their dog within a variety of police related tasks,<br/>
+            To try on kit used by our armed police officers,<br/>
+            To be taken through a fitness test run by Police instructors,<br/>
+            To be taken out on one of the Coastguard vessels.<br/>
+            During the day  you will have lunch with the Commissioner, Deputy Commissioner and Head of Tactical Operations in the finest dining
+            establishment in Bermuda, Roy’s’ situated in the Police Station Bar !
             </p>
           </span>
           <span className="bidding">
@@ -376,7 +248,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Captain Peter Rans</h2>
+          <h2>Captain Peter Rans<br/>-Deep Sea Fishing</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/peter.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">A fantastic deep sea fishing experience! 6 people can enjoy 6 hours of  fishing on
@@ -391,13 +263,11 @@ class Home extends React.Component {
           <button className="biddingButton" onClick={()=>testBid("Man F", this.state.item6, this.bidValue6.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
-      </div>
-      <div className="row">
       <div className="item">
-          <h2>Nadanja Bailey</h2>
+          <h2>Nadanja Bailey<br/>-Pub Crawl</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/nadanja.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Nadanja will join 6 people for 3 hours will on a pub crawl around Hamilton
+            <p className="inline2">Hosted by well-known comedian and DJ Nadanja Bailey. 3 hours of entertainment while visiting some of the islands bests pubs
             </p>
           </span>
           <span className="bidding">
@@ -409,10 +279,10 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Victor Raposo</h2>
+          <h2>Victor Raposo<br/>-Yard Clean-Up</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/victor.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Yard Clean. Up 3 Men Will Come To Your House For 3 Hours To Do Yard Work. Plus 1 Trucking if needed.
+            <p className="inline2">3 men will come to your house to do 3 hours of yard clean up, they will also take away any trees or branches by truck
             </p>
           </span>
           <span className="bidding">
@@ -423,10 +293,8 @@ class Home extends React.Component {
           <button className="biddingButton" onClick={()=>testBid("Man H", this.state.item8, this.bidValue8.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
-      </div>
-      <div className="row">
       <div className="item">
-          <h2>Ian Bridges</h2>
+          <h2>Ian Bridges<br/>-Surfing or Paddleboarding</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/ian.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">Meet Ian Bridges,  one of Bermuda's most prominent surfers. 
@@ -447,7 +315,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Gentlemen in Waiting</h2>
+          <h2>Gentlemen in Waiting<br/>-Dinner for 10</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/gentlemen.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">This group of Gentlemen will come to your house to 
@@ -464,13 +332,30 @@ class Home extends React.Component {
           <button className="biddingButton" onClick={()=>testBid("Man J", this.state.item10, this.bidValue10.value, this.state.house, this.state.name)}> Place Bid </button>
           </span>
         </div>
-      </div>
+        <div className="item">
+          <h2>Alex Rolling<br/>-BBQ for 6</h2>
+          <span>
+            <img className="inline1" width="220px" src={require("../src/alex.jpg")} alt="Bosom Buddies Logo"></img>
+            <p className="inline2">BBQ FOR 6 <br/>
+            Alex’s  will come to your house and
+            prepare a delicious meal for 6 people on your BBQ!<br/>
+            Complimented by 3 bottles of Prosecco. 
+            </p>
+          </span>
+          <span className="bidding">
+            <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item11}- {this.state.name11}</h1>
+          </span>
+          <span className="bidding">            
+          <p className="biddingDollar">$</p><input id="input0" className='biddingInput' ref={(c) => this.bidValue11 = c} type="number" />
+          <button className="biddingButton" onClick={()=>testBid("Man K", this.state.item11, this.bidValue11.value, this.state.house, this.state.name)}> Place Bid </button>
+          </span>
+        </div>
       <div className="footer">
           <img className="inline1" width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
           <p>   All proceeds go towards P.A.L.S cancer care</p>
           </div>
       </div>
-    );}
+      );
     }else{
       return(
         <div className="auction-over">
