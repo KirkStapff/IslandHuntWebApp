@@ -2,7 +2,12 @@
     font-family: cursiveFont;
     src: url('cursivefont.ttf');
   }
-  
+.main_footer{
+    position: relative;
+    color:white;
+    bottom: 10px;
+    right: 30px;
+}
 
 .home_main{
     width: 100%;    

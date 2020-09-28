@@ -70,6 +70,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/test', (req, res)=>{
   queryDB('SELECT ungrouped.* FROM Bids ungrouped INNER JOIN (SELECT Item, MAX(Bid) AS MaxBid FROM Bids GROUP BY Item) grouped ON ungrouped.Item = grouped.Item AND ungrouped.Bid = grouped.MaxBid ORDER BY Item ASC', (err, rows) => {
     if(err) throw err;
+  console.log(rows)
   res.send(rows)
   });
 })
