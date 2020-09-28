@@ -30,7 +30,7 @@ function testBid(item, curbid, newbid, house, name){
 }
 
 function getCountdown(){
-  let finish = new Date("Oct 19, 2020, 00:00:00").getTime();
+  let finish = new Date("Oct 20, 2020, 00:00:00").getTime();
   let now = new Date().getTime();
 
   let diff = finish - now;
@@ -134,11 +134,11 @@ class Home extends React.Component {
     if(this.state.name==null){
       return (
         <div className="main">
-        <h1 className="title">Men Auction</h1>
+        <h1 className="title">Male Auction</h1>
           <div className="popup">
             <p className="popupText" style={{marginLeft:'12px'}}>Login</p>
             <div className="enterName">
-              Name: <input id="input_name" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
+              Full Name: <input id="input_name" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
             </div>
             <div className="enterHouse">
               Email: <input id="input_house" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
@@ -156,9 +156,9 @@ class Home extends React.Component {
             <div>Auction closes in</div>
             <span id="days"></span> Days <span id="hours"></span> Hours <span id="minutes"></span> Min <span id="seconds"></span> Sec
           </div>
-        <h1 className="title">Men Auction</h1>
+        <h1 className="title">Male Auction</h1>
         <div className="item">
-            <h2>Keerome Maybury<br/>-Cocktail cruise</h2>
+            <h2>Keerome Maybury<br/>Cocktail cruise</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/keerome.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Relax and enjoy style and comfort on board
@@ -174,7 +174,7 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Dai James<br/>-Seafood and Lobster dinner</h2>
+            <h2>Dai James<br/>Seafood and Lobster dinner</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/dai.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Dai is offering to cook a 5 course seafood 
@@ -191,7 +191,7 @@ class Home extends React.Component {
             </span>
           </div>
         <div className="item">
-          <h2>Paul Lambert<br/>-Self-Defense</h2>
+          <h2>Paul Lambert<br/>Self-Defense</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/paul.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">Paul lambert  - personal  trainer 
@@ -208,7 +208,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Stratton Hatfield<br/>-Swizzle Washing Machine</h2>
+          <h2>Stratton Hatfield<br/>Swizzle Washing Machine</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/stratton.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">Cheers! The Swizzle Washing Machine will come to your party! 
@@ -224,7 +224,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Stephen Corbishley<br/>-Police Day Experience</h2>
+          <h2>Stephen Corbishley<br/>Police Day Experience</h2>
           <span>
             <img className="inline1" height="220px" src={require("../src/police.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline3">The Commissioner of Police offers to the highest bidder a very special experience:
@@ -249,7 +249,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Captain Peter Rans<br/>-Deep Sea Fishing</h2>
+          <h2>Captain Peter Rans<br/>Deep Sea Fishing</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/peter.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">A fantastic deep sea fishing experience! 6 people can enjoy 6 hours of  fishing on
@@ -265,7 +265,7 @@ class Home extends React.Component {
           </span>
         </div>
       <div className="item">
-          <h2>Nadanja Bailey<br/>-Pub Crawl</h2>
+          <h2>Nadanja Bailey<br/>Pub Crawl</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/nadanja.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">Hosted by well-known comedian and DJ Nadanja Bailey. 3 hours of entertainment while visiting some of the islands bests pubs
@@ -280,7 +280,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Victor Raposo<br/>-Yard Clean-Up</h2>
+          <h2>Victor Raposo<br/>Yard Clean-Up</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/victor.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">3 men will come to your house to do 3 hours of yard clean up, they will also take away any trees or branches by truck
@@ -295,7 +295,7 @@ class Home extends React.Component {
           </span>
         </div>
       <div className="item">
-          <h2>Ian Bridges<br/>-Surfing or Paddleboarding</h2>
+          <h2>Ian Bridges<br/>Surfing or Paddleboarding</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/ian.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">Meet Ian Bridges,  one of Bermuda's most prominent surfers. 
@@ -316,7 +316,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Gentlemen in Waiting<br/>-Dinner for 10</h2>
+          <h2>Gentlemen in Waiting<br/>Dinner for 10</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/gentlemen.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">This group of Gentlemen will come to your house to 
@@ -334,7 +334,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Alex Rolling<br/>-BBQ for 6</h2>
+          <h2>Alex Rolling<br/>BBQ for 6</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/alex.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">BBQ FOR 6 <br/>
@@ -352,7 +352,7 @@ class Home extends React.Component {
           </span>
         </div>
       <div className="footer">
-          <img className="inline1" width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
+          <img className="inline1" width="220px" src={require("../src/pals.png")} alt="Bosom Buddies Logo"></img>
           <p>   All proceeds go towards P.A.L.S cancer care</p>
           </div>
       </div>

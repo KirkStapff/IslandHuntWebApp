@@ -11,6 +11,7 @@ import SilentAuction from "./SilentAuction";
 import MenAuction from "./MenAuction";
 import ChildRun from './ChildRun';
 import AdultRun from './AdultRun';
+import CurrentEvents from './CurrentEvents'
 import '../src/index.css'
 
 
@@ -50,9 +51,10 @@ class Nav extends Component {
           <img width="150px" className="image" src={require("../src/logo-notext.png")} alt="Bosom Buddies Logo"/>
             <a className="navitem" href="/">Home</a>
             <a href="about">About</a>
-            <DropdownButton title="Current Events">
+            <DropdownButton title="Current Events">            
+              <Dropdown.Item href="current_events">All</Dropdown.Item>
               <Dropdown.Item href="silent_auction">Silent Auction</Dropdown.Item>
-              <Dropdown.Item href="men_auction">Men Auction</Dropdown.Item>
+              <Dropdown.Item href="male_auction">Male Auction</Dropdown.Item>
               <Dropdown.Item href="adult_run">Adult's Charity Run</Dropdown.Item>
               <Dropdown.Item href="child_run">Children's Charity Run</Dropdown.Item>
             </DropdownButton>
@@ -63,9 +65,10 @@ class Nav extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
+            <Route path="/current_events" component={CurrentEvents} />
             <Route path="/sponsors" component={Sponsor} />
             <Route path="/silent_auction" component={SilentAuction} />
-            <Route path="/men_auction" component={MenAuction} />
+            <Route path="/male_auction" component={MenAuction} />
             <Route path="/adult_run" component={AdultRun} />
             <Route path="/child_run" component={ChildRun} />
           </div>

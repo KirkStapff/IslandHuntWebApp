@@ -6,7 +6,7 @@
     height:100%;
     width:100%;
     padding-left: 16px;
-    margin-top:-9px;
+    margin-top:-18px;
     align-items: center;
 }
 
@@ -29,7 +29,6 @@
     font-family: 'Arial Narrow Bold', sans-serif;
     color: white;
     font-size: 24px;
-    position: fixed;
     height: 250px;
     width: 600px;
     border-radius: 30px;
@@ -50,7 +49,7 @@
 
 .enterName{
     position: absolute;
-    margin-left:160px;
+    margin-left:112px;
     color: white;
 }
 
@@ -141,7 +140,7 @@ button{
 }
 
 .item{
-    margin: 16px 0px 0px 32px;
+    margin: 16px 0px 48px 32px;
     align-items: center;
 }
 
@@ -222,5 +221,6 @@ a:focus {
     flex-direction: column;
     align-items: flex-end;
     align-self: center;
-    margin-top: 50px
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

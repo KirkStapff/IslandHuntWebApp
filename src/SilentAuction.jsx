@@ -30,7 +30,7 @@ function testBid(item, curbid, newbid, house, name){
 }
 
 function getCountdown(){
-  let finish = new Date("Oct 19, 2020, 00:00:00").getTime();
+  let finish = new Date("Oct 20, 2020, 00:00:00").getTime();
   let now = new Date().getTime();
 
   let diff = finish - now;
@@ -147,7 +147,7 @@ class Home extends React.Component {
           <div className="popup">
             <p className="popupText" style={{marginLeft:'12px'}}>Login</p>
             <div className="enterName">
-              Name: <input id="input_name" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
+              Full Name: <input id="input_name" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.name = c} type="text" />
             </div>
             <div className="enterHouse">
               Email: <input id="input_house" className='submitInput' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.house = c} type="text" />
@@ -270,7 +270,7 @@ class Home extends React.Component {
           <div className="item">
             <h2>Pamper Yourself</h2>
             <span>
-              <img className="inline1" width="220px" src={require("../src/pamper.jpg")} alt="Bosom Buddies Logo"></img>
+              <img className="inline1" width="220px" src={require("../src/pedicure.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Enjoy a 60 minute deluxe pedicure by a certified beauty therapist in the comfort of your own home... <br/>
               Doesn't get much better than that !!!</p>
             </span>
@@ -423,7 +423,7 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="footer">
-          <img width="220px" src={require("../src/pals.jpg")} alt="Bosom Buddies Logo"></img>
+          <img width="220px" src={require("../src/pals.png")} alt="Bosom Buddies Logo"></img>
           All proceeds go towards P.A.L.S cancer care
           </div>
         </div>
