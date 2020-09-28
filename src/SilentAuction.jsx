@@ -314,7 +314,7 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Villas Las Ventanas in Janquial, Costa Rica</h2>
+            <h2>Villas Las Ventanas in Junquial, Costa Rica</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/costa.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Visit beautiful Costa Rica , spend  7 nights in a 2 bedroom villa at the 
