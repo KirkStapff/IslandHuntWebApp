@@ -357,7 +357,7 @@ class Home extends React.Component {
           <h2>Chef Angelo<br/>Cooking Demonstration</h2>
           <span>
             <img className="inline1" width="350px" src={require("../src/angelo.jpg")} alt="Bosom Buddies Logo"></img>
-            <p className="inline2">Oin chef angelo for a 2 hour cooking demonstration  at your house and 
+            <p className="inline2">Join chef angelo for a 2 hour cooking demonstration  at your house and 
             The best part is you get to eat his amazing cooking as he prepares it !!<br/>
             Menu : <br/>
             Bruschetta or crostini with tomatoes and fresh mozzarella<br/>
