@@ -334,7 +334,7 @@ class Home extends React.Component {
           </span>
         </div>
         <div className="item">
-          <h2>Alex Rolling<br/>BBQ for 6</h2>
+          <h2>Alex Rollin<br/>BBQ for 6</h2>
           <span>
             <img className="inline1" width="220px" src={require("../src/alex.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">BBQ FOR 6 <br/>
