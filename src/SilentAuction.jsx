@@ -346,7 +346,7 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Bermuda Gold Championship</h2>
+            <h2>Bermuda Golf Championship</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/golf.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">This entitles two (2) people to walk inside the ropes on Sunday November 1st with the players. <br/>
