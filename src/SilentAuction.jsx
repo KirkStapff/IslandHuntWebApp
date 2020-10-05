@@ -283,7 +283,7 @@ class Home extends React.Component {
             </span>
           </div>
           <div className="item">
-            <h2>Family Fun Day</h2>
+            <h2>Family Fun Day for Four</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/funday.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Start your day off with a frozen yoghurt from <strong>YoCherry</strong>, before getting on the <strong>Ferry</strong> to Dockyard.  <br/>
