@@ -165,7 +165,7 @@ class Home extends React.Component {
               <img className="inline1" width="220px" src={require("../src/keerome.jpg")} alt="Bosom Buddies Logo"></img>
               <p className="inline2">Relax and enjoy style and comfort on board
               this classic 55ft cruiser. Keerome will welcome you on board Traveler 
-              for a Cocktail Cruise for 8 People including processco and hors d’oeuvres</p>
+              for a Cocktail Cruise for 8 People including Prosecco and hors d’oeuvres</p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item1}- {this.state.name1}</h1>
@@ -323,8 +323,8 @@ class Home extends React.Component {
             <img className="inline1" width="220px" src={require("../src/gentlemen.jpg")} alt="Bosom Buddies Logo"></img>
             <p className="inline2">This group of Gentlemen will come to your house to 
             wine and dine you and your friends for the entire evening. 
-            Dinner and drinks for up to 10 people. Food and wine will be provided by
-           “ The Gentlemen - In – Waiting”
+            Dinner and drinks for up to 10 people. Food and wine will be provided by<br/>
+            “The Gentlemen - In – Waiting”
             </p>
           </span>
           <span className="bidding">

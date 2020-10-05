@@ -286,8 +286,9 @@ class Home extends React.Component {
             <h2>Family Fun Day</h2>
             <span>
               <img className="inline1" width="220px" src={require("../src/funday.jpg")} alt="Bosom Buddies Logo"></img>
-              <p className="inline2">Start the day off dockyard, Then enjoy a game of Fun Golf before heading back to Hamilton on the ferry <br/>
-              Vouchers included</p>
+              <p className="inline2">Start your day off with a frozen yoghurt from <strong>YoCherry</strong>, before getting on the <strong>Ferry</strong> to Dockyard.  <br/>
+              There you can have lunch at <strong>Bonefish</strong> and then go to play some <strong>Fun Golf</strong>, before heading back to Hamilton on the Ferry.<br/>
+              </p>
             </span>
             <span className="bidding">
               <h1 className="biddingText" width={this.state.width}> Current Bid: ${this.state.item8}- {this.state.name8}</h1>

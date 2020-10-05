@@ -76,7 +76,7 @@ app.get('/test', (req, res)=>{
 
 app.all('/message', (req, res)=>{
   sendEmail(req.body.floop, req.body.from);
-  console.log(req.body.floop)
+  console.log("leo is giga-jigalo")
   res.send("")
 })
 
