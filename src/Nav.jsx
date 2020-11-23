@@ -1,81 +1,51 @@
 
-import React, { Component } from "react";
-import { Route,  BrowserRouter } from "react-router-dom";
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
+import React, { Component, useContext, useState } from "react";
+import {} from "react-router";
+import { Route,  BrowserRouter,} from "react-router-dom";
+import Logger, {LoggerContext} from "./Logger"
 import Home from "./Home";
-import Contact from "./Contact";
-import About from "./About";
-import Sponsor from "./Sponsor";
-import SilentAuction from "./SilentAuction";
-import MenAuction from "./MenAuction";
-import ChildRun from './ChildRun';
-import AdultRun from './AdultRun';
-import CurrentEvents from './CurrentEvents'
-import '../src/index.css'
+import Editor from "./Editor";
+import EditPicker from "./EditPicker"
+import ChallengePicker from "./ChallengePicker"
+import Viewer from "./Viewer"
+import Notify from "./Notify"
+import '../src/index.css';
 
-
-class Nav extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { width: 0, height: 0 };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
+const Nav = () => {  
   
-  componentDidMount() {
-    this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
-  }
-  
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
-  
-  updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  const login = () => {
+    setUser(true)
   }
 
-  render() {
-    if(this.state.width < this.state.height){
-      return(
-        <div className="vertcenter">
-          <img className ="center" width="280px" height="280px" src={require("../src/rotate_screen.png")} alt="Rotate Screen"/>
-        </div>
-      );
-    }
+  const  [user, setUser] = useState(false);
+  
     return (
-      <BrowserRouter>
-        <div>
-          <div className="topnav">
-          <img width="150px" className="image" src={require("../src/logo-notext.png")} alt="Bosom Buddies Logo"/>
-            <a className="navitem" href="/">Home</a>
-            <a href="about">About</a>
-            <DropdownButton title="Current Events">            
-              <Dropdown.Item href="current_events">All</Dropdown.Item>
-              <Dropdown.Item href="silent_auction">Silent Auction</Dropdown.Item>
-              <Dropdown.Item href="male_auction">Male Auction</Dropdown.Item>
-              <Dropdown.Item href="adult_run">Adult's Charity Run</Dropdown.Item>
-              <Dropdown.Item href="child_run">Children's Charity Run</Dropdown.Item>
-            </DropdownButton>
-            <a href="contact">Contact</a>
-          </div>
-          <hr style={{height:'2px', color:'black',backgroundColor:'black'}}></hr>
-          <div className="main">
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/current_events" component={CurrentEvents} />
-            <Route path="/sponsors" component={Sponsor} />
-            <Route path="/silent_auction" component={SilentAuction} />
-            <Route path="/male_auction" component={MenAuction} />
-            <Route path="/adult_run" component={AdultRun} />
-            <Route path="/child_run" component={ChildRun} />
-          </div>
-        </div>
-      </BrowserRouter>
+      <LoggerContext.Provider value={[user, setUser]}><div><BrowserRouter >
+      
+      {user &&
+      <div className="main_nav">
+        <Route exact path="/" component={Home} />
+        <Route exact path="/challenges" component={EditPicker} />
+        <Route exact path="/challenges/q1" component={()=><Editor challenge={0}/>} />
+        <Route exact path="/challenges/q2" component={()=><Editor challenge={1}/>} />
+        <Route exact path="/challenges/q3" component={()=><Editor challenge={2}/>} />
+        <Route exact path="/challenges/q4" component={()=><Editor challenge={3}/>} />
+        <Route exact path="/answers" component={ChallengePicker} />
+        <Route exact path="/answers/q1" component={()=><Viewer challenge={0}/>} />
+        <Route exact path="/answers/q2" component={()=><Viewer challenge={1}/>} />
+        <Route exact path="/answers/q3" component={()=><Viewer challenge={2}/>} />
+        <Route exact path="/answers/q4" component={()=><Viewer challenge={3}/>} />
+        <Route exact path="/notify" component={Notify} />
+      </div> }</BrowserRouter>
+      {!user && <div className ="login_screen"><div className ="login">
+    Login
+    <input id="input_name" className='input' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.user = c} type="text" />
+    <input id="input_name" className='input' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.user = c} type="text" />
+    <button className="submit" onClick={login}>Submit</button>
+    </div></div>} </div>
+      </LoggerContext.Provider>        
     );
-  }
+
 }
 
 export default Nav;

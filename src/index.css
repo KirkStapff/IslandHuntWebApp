@@ -1,104 +1,91 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  font-family: 'Arial Narrow Bold', sans-serif;
-}
-
-.content {
-  margin-left: 20px;
-}
-
-.center {
-  position: absolute;
-  margin-top: 300px;
-}
-
-.vertcenter {
-  height: 100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-button{
+.main_nav{
+  margin: auto;
+  width: 90%;
+  padding: 10px;
   
-  float: left;  
-  color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.title_nav{
+  font-size: 36px;
+  margin: 32px auto 45px auto;
   text-align: center;
-  padding: 10px 16px 10px 16px;
+  color: #30547b;
+}
+
+.link{
   text-decoration: none;
-  font-size: 110%;
-  font: bold;
-  outline: none;  
-  border-width: 0px;
-  background-color: white;
 }
 
-button:focus{
-  background-color: pink;
-  border-radius: 20px;
+.questions_nav{
+  margin: auto;
+  width: 40%;
+  text-decoration: none;
 }
 
-button:hover{
-  background-color: pink;
-  border-radius: 20px;
+.nav_question{  
+  border: 2px solid #72889f;
+  width: 80%;
+  border-radius: 12px;
+  margin: 0px auto 18px auto;
+  padding: 6px 0px 6px 0px;
+  font-size: 23px;
+  text-align: center;
+  color: #72889f;
+  min-height: 30px;
 }
 
-.main {
-  background-color: pink;
-  flex: 1;
+.login_screen{
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.image{
-  margin-top: 45px;
-}
-
-.topnav {
-  font-family: 'Arial Narrow Bold', sans-serif;
-  margin: 12px 0px 50px 8px; 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-  height: 80px;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;  
-  color: black;
   text-align: center;
-  padding: 10px 16px 10px 16px;
-  margin: 0px 0px 0px 0px;
-  text-decoration: none;
-  font-size: 110%;
-  font: bold;
+  font-size: 25px;
+  padding: 10px 25px 20px 25px;
+  border: solid grey 2px;
+  border-radius: 5px;
 }
 
-.dropdown-menu{
-  float: left;  
-  color: black;
-  text-align: center;
-  padding: 10px 16px 10px 16px;
-  text-decoration: none;
-  font-size: 110%;
-  font: bold;
+.input{  
+  margin: 10px 0px 0px 0px;
+  font-size: 10px;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {  
-  border-radius: 20px;
-  background-color: pink;
+.submit{
+  margin: 10px 30px 10px 30px;
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: rgb(233, 49, 202);
-  color: white;
+.editor_popup{
+  width:500px;
+  height:150px;
+  position:absolute;
+  top:30%;
+  left:50%;
+  margin:-50px 0 0 -250px;
+  background-color: #afcae6;
+  border-radius: 10px;
+  padding: 10px;
+  border: solid black 2px;
+}
+
+.viewer_popup{
+  width:500px;
+  position:absolute;
+  top:30%;
+  left:50%;
+  margin:-50px 0 0 -250px;
+  background-color: #afcae6;
+  border-radius: 10px;
+  padding: 10px;
+  border: solid black 2px;
+}
+
+.text_input{
+  height: 35px;
 }

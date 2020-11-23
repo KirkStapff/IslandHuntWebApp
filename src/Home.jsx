@@ -1,15 +1,50 @@
 import React, { Component } from 'react'
-import './home.css'
+import './index.css'
+
+import { Link } from 'react-router-dom'
+
+
 class Home extends Component {
+  
+
 
   render () {
     return (
-      <div class="home_main">
-        <h2 style={{fontSize: '102px', marginTop:'72px', color:'white'}}>Bosom Buddies</h2>
-        <h2 style={{fontSize: '42px', marginTop:'-72px', marginBottom:'72px', color:'white'}}>A group of girls who come together to raise money for cancer care in Bermuda</h2>
-        <div className="main_footer">
+      <div className="main_nav">
+          <div className="title_nav">Island Hunt Editor</div>
+          <div className="questions_nav" >
+            <div className="nav_question">
+            <Link
+              to={{
+                pathname: "/challenges",
+                search: "",
+                hash: "",
+                state: { fromDashboard: true }
+              }}
+            >Challenges</Link>
+            </div>
+            <div className="nav_question">
+            <Link
+              to={{
+                pathname: "/answers",
+                search: "",
+                hash: "",
+                state: { fromDashboard: true }
+              }}
+            >Answers</Link>
+            </div>
+            <div className="nav_question">
+            <Link
+              to={{
+                pathname: "/notify",
+                search: "",
+                hash: "",
+                state: { fromDashboard: true }
+              }}
+            >Notify Users</Link>
+            </div>
+            </div>
         </div>
-      </div>
     )
   }
 }

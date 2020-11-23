@@ -4,6 +4,6 @@ import Nav from "./Nav";
 import './index.css'
 
 ReactDOM.render(
-  <Nav />,
+  <Nav className="main_nav"/>,
   document.getElementById("root")
 );
