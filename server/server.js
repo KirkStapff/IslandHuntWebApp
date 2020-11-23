@@ -75,6 +75,17 @@ app.get('/getChallenges', (req, res)=>{
   });
 })
 
+app.all('/login', (req, res)=>{
+  queryDB('SELECT User, Pass FROM `Admin`', (err, rows) => {
+    if(err) throw err;
+    if(req.body.user == rows[0]["User"] && req.body.pass == rows[0]["Pass"]){
+        res.send(JSON.parse('{"result":1}'))
+      }else{
+        res.send(JSON.parse('{"result":0}'))
+      }    
+  });
+})
+
 app.get('/getEmails', (req, res)=>{
   queryDB('SELECT Email FROM `Users` ORDER BY Email ASC', (err, rows) => {
     if(err) throw err;

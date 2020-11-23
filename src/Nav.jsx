@@ -11,10 +11,30 @@ import Viewer from "./Viewer"
 import Notify from "./Notify"
 import '../src/index.css';
 
-const Nav = () => {  
+const Nav = () => { 
+
+  this.state = {
+    username: "",
+    password: ""
+  }
   
-  const login = () => {
-    setUser(true)
+  const login = (username, password) => {
+    const headers = new Headers();
+      headers.append("Content-Type", "application/json")
+    
+    const options = {
+      method: 'PUT',
+      headers,
+      body: '{ "user": "'+username+'", "pass": "'+password+'"}'
+    }
+
+    const request = new Request('/login', options);
+
+    fetch(request).then(res => res.json()).then(json => {
+      if(json["result"] == 1){
+          setUser(true)
+        }
+      })
   }
 
   const  [user, setUser] = useState(false);
@@ -39,9 +59,9 @@ const Nav = () => {
       </div> }</BrowserRouter>
       {!user && <div className ="login_screen"><div className ="login">
     Login
-    <input id="input_name" className='input' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.user = c} type="text" />
-    <input id="input_name" className='input' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.user = c} type="text" />
-    <button className="submit" onClick={login}>Submit</button>
+    <input id="input_name" className='input' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.state.username = c} type="text" />
+    <input id="input_name" className='input' style={{width:'200px', height:'13px', fontSize:'18px'}} ref={(c) => this.state.password = c} type="text" />
+    <button className="submit" onClick={()=>login(this.state.username.value, this.state.password.value)}>Submit</button>
     </div></div>} </div>
       </LoggerContext.Provider>        
     );
