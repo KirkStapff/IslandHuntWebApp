@@ -68,14 +68,14 @@ app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/getChallenges', (req, res)=>{
+app.all('/getChallenges', (req, res)=>{
   queryDB('SELECT Title, Rewards, Price, ImageLink FROM `Challenges` ORDER BY ID ASC', (err, rows) => {
     if(err) throw err;
   res.send(rows)
   });
 })
 
-app.post('/login', (req, res)=>{
+app.all('/login', (req, res)=>{
   queryDB('SELECT User, Pass FROM `Admin`', (err, rows) => {
     if(err) throw err;
     if(req.body.user == rows[0]["User"] && req.body.pass == rows[0]["Pass"]){
@@ -86,46 +86,46 @@ app.post('/login', (req, res)=>{
   });
 })
 
-app.get('/getEmails', (req, res)=>{
+app.all('/getEmails', (req, res)=>{
   queryDB('SELECT Email FROM `Users` ORDER BY Email ASC', (err, rows) => {
     if(err) throw err;
   res.send(rows)
   });
 })
 
-app.get('/editChallenge', (req, res)=>{
+app.all('/editChallenge', (req, res)=>{
   queryDB('UPDATE `Challenges` SET Title= "'+req.body.name+'", Rewards="'+req.body.rewards+'", ImageLink="'+req.body.image+'", Price='+req.body.price+' WHERE ID ='+(req.body.ch), (err, rows) => {
     if(err) throw err;
   res.send(rows)
   });
 })
 
-app.get('/login', (req, res)=>{
+app.all('/login', (req, res)=>{
   queryDB('SELECT Title FROM `Challenges` ORDER BY ID ASC', (err, rows) => {
     if(err) throw err;
   res.send(rows)
   });
 })
 
-app.get('/getQuestions1', (req, res)=>{
+app.all('/getQuestions1', (req, res)=>{
   queryDB('SELECT Question, TextAnswer, `Order` FROM `Challenge1` ORDER BY `Order` ASC', (err, rows) => {
     if(err) throw err;
     res.send(rows)
   });
 })
-app.get('/getQuestions2', (req, res)=>{
+app.all('/getQuestions2', (req, res)=>{
   queryDB('SELECT Question, TextAnswer, `Order` FROM `Challenge2` ORDER BY `Order` ASC', (err, rows) => {
     if(err) throw err;
   res.send(rows)
   });
 })
-app.get('/getQuestions3', (req, res)=>{
+app.all('/getQuestions3', (req, res)=>{
   queryDB('SELECT Question, TextAnswer, `Order` FROM `Challenge3` ORDER BY `Order` ASC', (err, rows) => {
     if(err) throw err;
   res.send(rows)
   });
 })
-app.get('/getQuestions4', (req, res)=>{
+app.all('/getQuestions4', (req, res)=>{
   queryDB('SELECT Question, TextAnswer, `Order` FROM `Challenge4` ORDER BY `Order` ASC', (err, rows) => {
     if(err) throw err;
     
@@ -133,7 +133,7 @@ app.get('/getQuestions4', (req, res)=>{
   });
 })
 
-app.get('/getAnswers1', (req, res)=>{
+app.all('/getAnswers1', (req, res)=>{
   queryDB('SELECT UserID, Score, Answers FROM `Leaderboard1` ORDER BY Score ASC', (err, rows) => {
     if(err) throw err;
     for(i=0; i<rows.length; i++){
@@ -143,7 +143,7 @@ app.get('/getAnswers1', (req, res)=>{
   res.send(rows)
   });
 })
-app.get('/getAnswers2', (req, res)=>{
+app.all('/getAnswers2', (req, res)=>{
   queryDB('SELECT UserID, Score, Answers FROM `Leaderboard2` ORDER BY Score ASC', (err, rows) => {
     if(err) throw err;
     for(i=0; i<rows.length; i++){
@@ -152,7 +152,7 @@ app.get('/getAnswers2', (req, res)=>{
   res.send(rows)
   });
 })
-app.get('/getAnswers3', (req, res)=>{
+app.all('/getAnswers3', (req, res)=>{
   queryDB('SELECT UserID, Score, Answers FROM `Leaderboard3` ORDER BY Score ASC', (err, rows) => {
     if(err) throw err;
     for(i=0; i<rows.length; i++){
@@ -162,7 +162,7 @@ app.get('/getAnswers3', (req, res)=>{
   });
   
 })
-app.get('/getAnswers4', (req, res)=>{
+app.all('/getAnswers4', (req, res)=>{
   queryDB('SELECT UserID, Score, Answers FROM `Leaderboard4` ORDER BY Score ASC', (err, rows) => {
     if(err) throw err;
   for(i=0; i<rows.length; i++){
@@ -172,7 +172,7 @@ app.get('/getAnswers4', (req, res)=>{
   });
 })
 
-app.get('/getPlayers', (req, res)=>{
+app.all('/getPlayers', (req, res)=>{
   queryDB('SELECT ID, FirstName, LastName, Email FROM `Users`', (err, rows) => {
     if(err) throw err;
     for(i=0; i<rows.length; i++){
@@ -185,7 +185,7 @@ app.get('/getPlayers', (req, res)=>{
   });
 })
 
-app.get('/editQuestion', (req, res) => {
+app.all('/editQuestion', (req, res) => {
   id = req.body.id
   query = 'UPDATE `Challenge'+(req.body.ch+1)+'` SET Question="'+req.body.ques+'", TextAnswer='+req.body.tans+' WHERE `Order`='+id
   console.log(req)
@@ -195,7 +195,7 @@ app.get('/editQuestion', (req, res) => {
   });
 })
 
-app.get('/deleteQuestion', (req, res) => {
+app.all('/deleteQuestion', (req, res) => {
   id = req.body.id
   query = 'DELETE FROM `Challenge'+(req.body.ch+1)+'` WHERE `Order`='+id
   console.log(req)
@@ -205,7 +205,7 @@ app.get('/deleteQuestion', (req, res) => {
   });
 })
 
-app.get('/addQuestion', (req, res) => {
+app.all('/addQuestion', (req, res) => {
   nextId = req.body.nQues
   query = 'INSERT INTO `Challenge'+(req.body.ch+1)+'` (Question, TextAnswer, `Order`) VALUES ("", 0, '+nextId+')'
   console.log(query)
