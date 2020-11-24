@@ -75,7 +75,7 @@ app.get('/getChallenges', (req, res)=>{
   });
 })
 
-app.get('/login', (req, res)=>{
+app.post('/login', (req, res)=>{
   queryDB('SELECT User, Pass FROM `Admin`', (err, rows) => {
     if(err) throw err;
     if(req.body.user == rows[0]["User"] && req.body.pass == rows[0]["Pass"]){
