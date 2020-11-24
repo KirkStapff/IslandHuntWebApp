@@ -23,7 +23,7 @@ const Nav = () => {
       headers.append("Content-Type", "application/json")
     
     const options = {
-      method: 'PUT',
+      method: 'POST',
       headers,
       body: '{ "user": "'+username+'", "pass": "'+password+'"}'
     }
