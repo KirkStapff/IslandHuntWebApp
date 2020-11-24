@@ -75,7 +75,7 @@ app.get('/getChallenges', (req, res)=>{
   });
 })
 
-app.all('/login', (req, res)=>{
+app.get('/login', (req, res)=>{
   queryDB('SELECT User, Pass FROM `Admin`', (err, rows) => {
     if(err) throw err;
     if(req.body.user == rows[0]["User"] && req.body.pass == rows[0]["Pass"]){
@@ -93,7 +93,7 @@ app.get('/getEmails', (req, res)=>{
   });
 })
 
-app.all('/editChallenge', (req, res)=>{
+app.get('/editChallenge', (req, res)=>{
   queryDB('UPDATE `Challenges` SET Title= "'+req.body.name+'", Rewards="'+req.body.rewards+'", ImageLink="'+req.body.image+'", Price='+req.body.price+' WHERE ID ='+(req.body.ch), (err, rows) => {
     if(err) throw err;
   res.send(rows)
@@ -185,7 +185,7 @@ app.get('/getPlayers', (req, res)=>{
   });
 })
 
-app.all('/editQuestion', (req, res) => {
+app.get('/editQuestion', (req, res) => {
   id = req.body.id
   query = 'UPDATE `Challenge'+(req.body.ch+1)+'` SET Question="'+req.body.ques+'", TextAnswer='+req.body.tans+' WHERE `Order`='+id
   console.log(req)
@@ -195,7 +195,7 @@ app.all('/editQuestion', (req, res) => {
   });
 })
 
-app.all('/deleteQuestion', (req, res) => {
+app.get('/deleteQuestion', (req, res) => {
   id = req.body.id
   query = 'DELETE FROM `Challenge'+(req.body.ch+1)+'` WHERE `Order`='+id
   console.log(req)
@@ -205,7 +205,7 @@ app.all('/deleteQuestion', (req, res) => {
   });
 })
 
-app.all('/addQuestion', (req, res) => {
+app.get('/addQuestion', (req, res) => {
   nextId = req.body.nQues
   query = 'INSERT INTO `Challenge'+(req.body.ch+1)+'` (Question, TextAnswer, `Order`) VALUES ("", 0, '+nextId+')'
   console.log(query)
@@ -213,33 +213,6 @@ app.all('/addQuestion', (req, res) => {
     if(err) throw err;
   res.send(rows)
   });
-})
-
-app.all('/message', (req, res)=>{
-  sendEmail(req.body.floop, req.body.from);
-  console.log("leo is giga-jigalo")
-  res.send("")
-})
-
-app.all('/bid', (req, res) => {
-  query = 'SELECT Max(Bid) FROM Bids WHERE Item="'+req.body.item+'"'
-  //freshConn = mysql.createConnection(connectionDetails)
-  queryDB(query, (err, rows) => {
-    if(err){
-       console.log("ring ting tong");
-    }
-    console.log(rows[0]['Max(Bid)']+" < "+req.body.bid)
-    if(rows[0]['Max(Bid)'] < req.body.bid){
-      query2 = 'INSERT INTO `BosomBuddiesAuctions`.`Bids` (`Item`, `Name`, `House`, `Bid`) VALUES ("'+req.body.item+'", "'+req.body.name+'", "'+req.body.house+'", "'+req.body.bid+'")';
-      queryDB(query2, (err, rows) => {
-      if(err){
-          console.log("ring ting tong");
-      }
-      console.log(query2)
-      res.send(rows)
-      })
-    }    
-  })
 })
 
 app.get('*', (req,res) =>{
