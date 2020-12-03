@@ -4,38 +4,13 @@ var express = require('express');
 var nodemailer = require('nodemailer');
 var crypto = require('crypto');
 
-const sendEmail = (message, from)=>{
-  var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'kirkstapff88@gmail.com',
-      pass: 'K!RK@@)*'
-    }
-  });
-  
-  var mailOptions = {
-    from: from,
-    to: 'chrissyinbda@gmail.com',
-    subject: 'Bosom Buddies Contact',
-    text: message + " -- Message From "+ from
-  };
-  
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
-    }
-  });
-}
-
 var app = express();
 const port = 3002
 
 var poolCluster = mysql.createPool({
   host: '107.180.109.38',
-  user: 'kirky',
-  password: 'Kirk2208',
+  user: 'user',
+  password: 'pass',
   database: 'ScavDB',
   connectionLimit: 100,
   queueLimit: 150
@@ -43,8 +18,8 @@ var poolCluster = mysql.createPool({
 
 const connectionDetails = {
   host: '107.180.109.38',
-  user: 'kirky',
-  password: 'Kirk2208',
+  user: 'user',
+  password: 'pass',
   database: 'ScavDB',
 }
 

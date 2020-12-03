@@ -43,6 +43,7 @@ const Nav = () => {
       <LoggerContext.Provider value={[user, setUser]}><div><BrowserRouter >
       
       {user &&
+      setTimeout(() => setUser(false), 300000) &&
       <div className="main_nav">
         <Route exact path="/" component={Home} />
         <Route exact path="/challenges" component={EditPicker} />
