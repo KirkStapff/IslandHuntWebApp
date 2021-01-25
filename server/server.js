@@ -26,7 +26,7 @@ const connectionDetails = {
 const connection = mysql.createConnection(connectionDetails);
 
 var queryDB = function(query, cb) {
-  poolCluster.getConnection(function(err, connection) {
+  poolCluster.getConnection(function(err, connection) { onemptied
       if(err) {
           cb(err, null);
       }
