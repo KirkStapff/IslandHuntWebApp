@@ -50,7 +50,7 @@ class Notify extends React.Component{
         fetch('/getEmails').then(res => res.json()).then(json =>{
             var list = ""
             for(var i=0; i<json.length; i++){
-                list = list+(new Buffer(json[i]["Email"], 'base64')).toString('ascii');
+                list = list+(new Buffer(json[i]["Email"], 'base64')).toString('ascii')+", ";
             }
             var element = document.createElement('a');
             element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(list));

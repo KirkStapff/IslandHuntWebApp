@@ -7,36 +7,25 @@ var crypto = require('crypto');
 var app = express();
 const port = 3002
 
-var poolCluster = mysql.createPool({
-  host: '107.180.109.38',
-  user: 'user',
-  password: 'pass',
-  database: 'ScavDB',
-  connectionLimit: 100,
-  queueLimit: 150
-});
-
 const connectionDetails = {
   host: '107.180.109.38',
-  user: 'user',
-  password: 'pass',
+  user: 'ChloeBaron',
+  password: 'tlf2020!',
   database: 'ScavDB',
 }
 
-const connection = mysql.createConnection(connectionDetails);
+const npools = 10;
+var pool = [];
+for(var i = 0; i < npools; i++){
+  pool.push(mysql.createConnection(connectionDetails));
+}
+var current = 0;
 
 var queryDB = function(query, cb) {
-  poolCluster.getConnection(function(err, connection) { onemptied
-      if(err) {
-          cb(err, null);
-      }
-      else {
-          connection.query(query, function (err, rows) {
-              connection.release();
-              cb(err, rows);
-          });
-      }
-  });
+  pool[current].query(query, cb);
+  pool[current].end();
+  pool[current] = mysql.createConnection(connectionDetails);
+  current = (current + 1) % npools;
 };
 
 app.use(express.static(path.join(__dirname, "..", "build")));
